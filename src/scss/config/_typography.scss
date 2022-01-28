@@ -1,0 +1,209 @@
+%h1,
+h1 {
+  @include font($size: 38px, $colour: map-get($palette, purple));
+  margin-bottom: 20px;
+  @include media-breakpoint-up(lg) {
+    font-size: 64px;
+    margin-bottom: 30px;
+  }
+}
+
+%h2,
+h2 {
+  @include font($size: 32px, $height: 32px, $colour: map-get($palette, purple));
+  @include media-breakpoint-up(lg) {
+    font-size: 48px;
+    line-height: 62px;
+  }
+}
+
+%h3,
+h3 {
+  @include font($family: $font-family--medium, $size: 24px, $colour: map-get($palette, purple));
+  margin-bottom: 26px;
+  @include media-breakpoint-up(lg) {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+}
+
+%h4,
+h4 {
+  @include font($family: $font-family--medium, $size: 20px);
+  margin-bottom: 20px;
+  @include media-breakpoint-up(lg) {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+}
+
+%h5,
+h5 {
+  @include font($size: 18px);
+  @include media-breakpoint-up(lg) {
+    font-size: 21px;
+  }
+}
+
+%h6,
+h6 {
+  @include font($family: $font-family--medium, $size: 18px);
+  @include media-breakpoint-up(lg) {
+    font-size: 21px;
+  }
+}
+
+%p,
+p {
+  @include font($size: 16px);
+  @include media-breakpoint-up(lg) {
+    font-size: 18px;
+  }
+}
+%bigger,
+.bigger {
+  @include font($size: 18px, $height: 30px);
+  @include media-breakpoint-up(lg) {
+    font-size: 21px;
+  }
+}
+%small,
+.small {
+  @include font($size: 14px);
+  @include media-breakpoint-up(lg) {
+    @include font($size: 16px);
+  }
+}
+%extraSmall,
+.extraSmall {
+  @include font($size: 14px, $colour: map-get($palette, greyTwo));
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: map-get($palette, greyOne);
+  &:hover {
+    text-decoration: none;
+    color: map-get($palette, greyOne);
+  }
+}
+%bodyLink,
+.bodyLink {
+  @include font($size: 16px, $colour: map-get($palette, purple));
+  @include media-breakpoint-up(lg) {
+    font-size: 18px;
+  }
+}
+
+%bodyLinkBold,
+.bodyLinkBold {
+  @include font($family: $font-family--medium, $size: 16px, $colour: map-get($palette, purple));
+  @include media-breakpoint-up(lg) {
+    font-size: 18px;
+  }
+}
+.titleLink {
+  @include font($family: $font-family--medium, $size: 18px, $colour: map-get($palette, purple));
+  @include media-breakpoint-up(lg) {
+    font-size: 21px;
+  }
+}
+.featureLink {
+  @include font($family: $font-family--medium, $size: 21px, $colour: map-get($palette, purple));
+  @include media-breakpoint-up(lg) {
+    font-size: 24px;
+  }
+}
+
+%featureLink,
+.featureLink {
+  @include font($family: $font-family--medium, $size: 21px, $colour: map-get($palette, purple));
+  @include media-breakpoint-up(lg) {
+    font-size: 24px;
+  }
+}
+
+ol,
+ul {
+  padding-left: 0;
+}
+
+b,
+strong {
+  font-family: $font-family--medium;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+.wysiwyg {
+  overflow-wrap: break-word;
+  @extend %p;
+
+  h1 {
+    @extend %h1;
+  }
+
+  h2 {
+    @extend %h2;
+  }
+
+  h3 {
+    @extend %h3;
+  }
+
+  h4 {
+    @extend %h4;
+  }
+
+  h5 {
+    @extend %h5;
+  }
+
+  h6 {
+    @extend %h6;
+  }
+
+  p {
+    @extend %p;
+  }
+
+  a:not(.button) {
+    font-family: $font-family--medium;
+    color: map-get($palette, purple);
+  }
+
+  /* Added to handle a > img links, issue where images wouldnt respect 100% max-width on ie */
+  a:not([class]){
+    max-width: 100%; 
+  }
+
+  a.button {
+    font-family: $font-family;
+    margin-bottom: 20px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  ul li a {
+    font-family: $font-family;
+    color: map-get($palette, purple);
+  }
+
+  .accordion {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 0;
+    }
+  }
+}

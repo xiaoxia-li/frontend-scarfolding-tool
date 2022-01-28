@@ -1,0 +1,115 @@
+.button {
+  text-transform: uppercase;
+  padding: 11px 20px 9px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-right: 10px;
+
+  @include font($family: $font-family, $height: 21px, $size: 18px, $colour: map-get($palette, white));
+  &:hover {
+    text-decoration: none;
+    color: map-get($palette, white);
+  }
+  &:focus {
+    background-color: map-get($palette, purpleThemeTwo);
+    border: 2px solid map-get($palette, purpleThemeTwo);
+    color: map-get($palette, white);
+  }
+  &:active {
+    background-color: map-get($palette, purpleThemeThree);
+    border: 2px solid map-get($palette, purpleThemeThree);
+    color: map-get($palette, white);
+  }
+
+  [class^='icon-'],
+  [class*=' icon-'] {
+    margin-left: 20px;
+    font-size: 20px;
+  }
+  &__primary {
+    background-color: map-get($palette, purple);
+    border: 2px solid map-get($palette, purple);
+    &:hover {
+      background-color: transparent;
+      border: 2px solid map-get($palette, purple);
+      color: map-get($palette, purple);
+    }
+  }
+
+  &__secondary {
+    &--hollow {
+      border: 2px solid map-get($palette, purple);
+      color: map-get($palette, purple);
+      background-color: transparent;
+
+      &:hover {
+        background-color: map-get($palette, purple);
+        color: map-get($palette, white);
+      }
+      &:focus {
+        background-color: map-get($palette, purpleThemeTwo);
+        border: 2px solid map-get($palette, purpleThemeTwo);
+      }
+      &:active {
+        background-color: map-get($palette, purpleThemeThree);
+        border: 2px solid map-get($palette, purpleThemeThree);
+      }
+    }
+
+    &--whiteHollow {
+      border: 2px solid map-get($palette, white);
+      color: map-get($palette, white);
+      &:hover {
+        border: 2px solid map-get($palette, purple);
+        background-color: map-get($palette, purple);
+      }
+      &:focus {
+        border: 2px solid map-get($palette, purpleThemeTwo);
+        background-color: map-get($palette, purpleThemeTwo);
+      }
+      &:active {
+        border: 2px solid map-get($palette, purpleThemeThree);
+        background-color: map-get($palette, purpleThemeThree);
+      }
+    }
+
+    &--white {
+      border: 2px solid map-get($palette, white);
+      color: map-get($palette, purple);
+      background-color: map-get($palette, white);
+      &:hover {
+        border: 2px solid map-get($palette, purple);
+        background-color: map-get($palette, white);
+        color: map-get($palette, purple);
+      }
+      &:focus {
+        border: 2px solid map-get($palette, purpleThemeTwo);
+        background-color: map-get($palette, purpleThemeTwo);
+        color: map-get($palette, white);
+      }
+      &:active {
+        border: 2px solid map-get($palette, purpleThemeThree);
+        background-color: map-get($palette, purpleThemeThree);
+        color: map-get($palette, white);
+      }
+    }
+    &--whitesmall {
+      border: 2px solid map-get($palette, white);
+      &:hover {
+        border: 2px solid map-get($palette, purple);
+        background-color: map-get($palette, purple);
+      }
+      &:focus {
+        border: 2px solid map-get($palette, purpleThemeTwo);
+        background-color: map-get($palette, purpleThemeTwo);
+      }
+      &:active {
+        border: 2px solid map-get($palette, purpleThemeThree);
+        background-color: map-get($palette, purpleThemeThree);
+      }
+    }
+  }
+}

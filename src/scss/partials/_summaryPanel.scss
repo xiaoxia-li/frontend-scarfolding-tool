@@ -1,0 +1,62 @@
+.summaryPanelRow {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+  }
+  .carehome__title {
+    @extend %h3;
+    font-size: 28px;
+  }
+}
+
+.summaryPanel {
+  color: map-get($palette, white);
+  background-color: map-get($palette, purple);
+  @extend %p;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  @include media-breakpoint-up(lg) {
+    padding: 30px;
+    margin-top: -150px;
+    z-index: 10;
+  }
+
+  a,
+  p,
+  h3 {
+    color: map-get($palette, white);
+  }
+  h3 {
+    margin-bottom: 10px;
+  }
+  &__row {
+    display: flex;
+    flex-direction: row;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid map-get($palette, greyFour);
+  }
+  &__field {
+    width: 40%;
+  }
+  &__content {
+    width: 60%;
+  }
+  .icon-map-pin,
+  .icon-download {
+    font-size: 25px;
+    margin-left: 15px;
+  }
+  .gotoMap {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,201 @@
+.collectionPanel {
+  .col-12 {
+    &:nth-child(3n + 2) {
+      .collectionPanel__expandContent {
+        @include media-breakpoint-up(lg) {
+          margin-left: calc(-100% - 40px);
+        }
+        @include media-breakpoint-up(xl) {
+          margin-left: calc(-100% - 60px);
+        }
+        &:before,
+        &:after {
+          @include media-breakpoint-up(lg) {
+            left: calc(33% + 150px);
+          }
+        }
+      }
+    }
+    &:nth-child(3n + 3) {
+      .collectionPanel__expandContent {
+        @include media-breakpoint-up(lg) {
+          margin-left: calc(-200% - 80px);
+        }
+        @include media-breakpoint-up(xl) {
+          margin-left: calc(-200% - 120px);
+        }
+        &:before,
+        &:after {
+          @include media-breakpoint-up(lg) {
+            left: calc(66.7% + 150px);
+          }
+        }
+      }
+    }
+  }
+  .custom__gutter {
+    @include media-breakpoint-up(lg) {
+      --bs-gutter-x: 40px;
+      --bs-gutter-y: 40px;
+    }
+    @include media-breakpoint-up(xl) {
+      --bs-gutter-x: 60px;
+      --bs-gutter-y: 60px;
+    }
+  }
+  &__itemWrapper {
+    padding-bottom: 30px;
+    @include media-breakpoint-up(lg) {
+      padding-bottom: 0;
+    }
+  }
+  &__item {
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    picture {
+      z-index: 10;
+      @include imgLayout($ratioMobile: 78.7%, $ratioDesktop: 78.7%);
+      img {
+        width: calc(100% - 30px);
+      }
+    }
+    &:hover {
+      .collectionPanel__backPattern {
+        background-color: map-get($palette, purpleTwo);
+      }
+    }
+
+    &.no-expanded-content {
+      cursor: default;
+    }
+  }
+  &__awardsContent {
+    height: 100%;
+    position: relative;
+    text-align: center;
+    z-index: 10;
+    padding: 20px 20px 110px 20px;
+    width: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include media-breakpoint-up(lg) {
+      padding: 30px 30px 120px 30px;
+      min-height: 450px;
+    }
+    picture {
+      position: relative;
+      z-index: 10;
+      &:after {
+        display: none;
+      }
+      img {
+        position: relative;
+        max-width: 150px;
+        margin-bottom: 20px;
+        @include media-breakpoint-up(lg) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+    p,
+    a {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    a {
+      @extend %p;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: calc(100% - 90px);
+      background-color: map-get($palette, white);
+      top: 0;
+      right: 0;
+    }
+  }
+  &__backPattern {
+    position: absolute;
+    width: calc(100% - 125px);
+    height: calc(100% - 30px);
+    background-color: map-get($palette, purpleThree);
+    top: 30px;
+    right: 0;
+    .icon-add {
+      font-size: 24px;
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      display: block;
+      transition: all 500ms ease;
+    }
+  }
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    min-height: 120px;
+    z-index: 10;
+    .person__name {
+      @extend %h4;
+      line-height: 26px;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      color: map-get($palette, purple);
+    }
+    .person__title {
+      @extend %bigger;
+      margin-bottom: 40px;
+    }
+  }
+  &__expandContent {
+    z-index: 10;
+    box-sizing: border-box;
+    border: 3px solid map-get($palette, purpleTwo);
+    background-color: map-get($palette, offWhite);
+    position: relative;
+    margin-top: 60px;
+    padding: 20px;
+    display: none;
+    @include media-breakpoint-up(lg) {
+      width: calc(300% + 80px);
+      padding: 30px;
+    }
+    @include media-breakpoint-up(xl) {
+      width: calc(300% + 120px);
+      padding: 50px 30px;
+    }
+    @include arrowAlt($left: 150px);
+    &:before {
+      top: -20px;
+    }
+    &:after {
+      top: -17px;
+    }
+    p {
+      @extend %bigger;
+    }
+    .inline__quote--person,
+    .inline__quote--position {
+      display: none;
+    }
+  }
+  .show {
+    .collectionPanel__expandContent {
+      display: block;
+    }
+    .icon-add {
+      transform: rotate(135deg);
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.signpostPanel {
+  @extend %standardGap;
+  &__wrapper {
+    padding: 30px 0;
+    @include media-breakpoint-up(lg) {
+      padding: 60px 0;
+    }
+    position: relative;
+    > div {
+      z-index: 2;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      display: block;
+      background-color: map-get($palette, purpleTwo);
+      height: 100%;
+      top: 0;
+      z-index: 0;
+      left: 35px;
+      width: 100vw;
+      @include media-breakpoint-up(lg) {
+        left: calc(33.33% - 60px);
+      }
+    }
+  }
+  &__content {
+    padding: 30px;
+    background-color: map-get($palette, white);
+    min-height: 350px;
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      min-height: 100%;
+    }
+    .button {
+      margin-top: 20px;
+      @include media-breakpoint-up(lg) {
+        margin-top: 30px;
+      }
+    }
+  }
+  &__imagearea {
+    height: 100%;
+    picture {
+      height: 100%;
+      @include imgLayout();
+    }
+  }
+}

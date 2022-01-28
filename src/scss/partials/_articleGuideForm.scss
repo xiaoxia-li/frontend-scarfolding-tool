@@ -1,0 +1,8 @@
+.articleGuideForm {
+  .form {
+    padding: 20px 0;
+    @include media-breakpoint-up(lg) {
+      padding: 45px 0;
+    }
+  }
+}

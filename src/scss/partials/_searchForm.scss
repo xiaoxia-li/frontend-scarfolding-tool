@@ -1,0 +1,85 @@
+.searchForm {
+  width: 100%;
+  padding: 15px;
+  background-color: map-get($palette, white);
+  @include media-breakpoint-up(lg) {
+    padding: 30px;
+  }
+  @include backgroundPattern();
+  &:after {
+    left: 30px;
+    @include media-breakpoint-up(lg) {
+      left: 40%;
+    }
+  }
+  &__wrapper {
+    position: relative;
+    border-bottom: 1px solid map-get($palette, purple);
+    padding-bottom: 20px;
+    min-height: 120px;
+    @include clearfix;
+  }
+
+  .button {
+    float: right;
+    margin-top: 15px;
+    margin-right: 0;
+  }
+  .button__secondary--hollow {
+    float: left;
+  }
+
+  .inputIconWrapper {
+    width: 100%;
+    display: inline-block;
+    @include media-breakpoint-up(lg) {
+      width: calc(50% - 8px);
+    }
+  }
+  .select2 {
+    width: 100% !important;
+    margin-bottom: 20px;
+    display: inline-block;
+    @include media-breakpoint-up(lg) {
+      width: calc(50% - 8px) !important;
+      float: right;
+    }
+  }
+  &__checkGroup {
+    width: 100%;
+    p {
+      width: 100%;
+      font-size: 16px;
+      @include media-breakpoint-up(xxl) {
+        width: auto;
+        display: inline-block;
+        float: left;
+      }
+    }
+    .form-radio {
+      display: inline-block;
+      @include formElement(radio);
+      padding-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 15px;
+    }
+    .form-check {
+      display: inline-block;
+      @include formElement(checkbox);
+      padding-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 15px;
+    }
+    [type='radio'] {
+      @include media-breakpoint-up(xxl) {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.articlesSearchForm {
+  .select2 {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,305 @@
+/* Style for featureTextPanel */
+.featureTextPanel {
+  @extend %standardGap;
+  &__wrapper {
+    position: relative;
+  }
+  &__contentarea {
+    height: 100%;
+    background-color: map-get($palette, white);
+    padding: 30px 30px 60px 30px;
+    margin-left: 30px;
+    @include media-breakpoint-up(lg) {
+      margin-top: 60px;
+      margin-left: 0;
+      height: calc(100% - 60px);
+      width: 100%;
+      padding: 30px 30px 30px 90px;
+    }
+    @include media-breakpoint-up(xl) {
+      padding: 60px 40px 60px 100px;
+    }
+    &--background {
+      background-color: map-get($palette, purpleThree);
+    }
+    &--padding {
+      padding: 30px;
+      @include media-breakpoint-up(lg) {
+        padding: 30px;
+      }
+      @include media-breakpoint-up(xl) {
+        padding: 60px;
+      }
+    }
+    &--spaceBetween {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+    .button {
+      margin-top: 20px;
+    }
+  }
+}
+
+/* Style for variantB */
+.featureTextPanel--alt {
+  background-color: map-get($palette, purpleTwo);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  @include media-breakpoint-up(lg) {
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+
+  picture {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      @include object-fit(cover, center);
+    }
+  }
+  .featureTextPanel {
+    &__wrapper {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      @include media-breakpoint-up(lg) {
+        margin-top: 120px;
+        margin-bottom: 60px;
+      }
+    }
+    &__content {
+      background-color: map-get($palette, white);
+      margin-top: 30px;
+      padding: 20px;
+      margin-left: 30px;
+      width: calc(100% - 30px);
+      @include media-breakpoint-up(lg) {
+        padding: 30px;
+        margin: 60px 0 0 60px;
+        height: 100%;
+        width: calc(100% - 60px);
+      }
+    }
+    &__accordions {
+      margin-top: 30px;
+      @include media-breakpoint-up(lg) {
+        margin-top: 50px;
+      }
+    }
+    &__imagearea {
+      position: relative;
+      @include media-breakpoint-up(lg) {
+        margin-right: 60px;
+        margin-left: 60px;
+      }
+    }
+    &__image {
+      &--top {
+        display: none;
+        @include media-breakpoint-up(lg) {
+          position: relative;
+          display: block;
+          width: 50%;
+          margin-left: 50%;
+          margin-top: -120px;
+          &:after {
+            content: '';
+            display: block;
+            padding-bottom: 100%;
+          }
+        }
+      }
+      &--centre {
+        width: calc(100% - 30px);
+        position: relative;
+        @include media-breakpoint-up(lg) {
+          width: 75%;
+          margin-top: -20px;
+          margin-left: 0;
+        }
+        &:after {
+          content: '';
+          display: block;
+          padding-bottom: 72.7%;
+        }
+      }
+      &--bottom {
+        display: none;
+        @include media-breakpoint-up(lg) {
+          position: relative;
+          display: block;
+          width: 65%;
+          margin-left: 25%;
+          margin-top: -20px;
+          &:after {
+            content: '';
+            display: block;
+            padding-bottom: 72.7%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Vairant B2 facility list */
+.featureTextPanel--facilitiesList {
+  position: relative;
+  margin-top: 30px 0;
+  background-color: map-get($palette, purpleTwo);
+  @include media-breakpoint-up(lg) {
+    margin: 120px 0 90px;
+  }
+  .featureTextPanel {
+    &__content {
+      background-color: map-get($palette, white);
+      padding: 20px;
+      margin-left: 30px;
+      min-height: 100%;
+      @include media-breakpoint-up(lg) {
+        padding: 30px;
+        margin-top: 60px;
+        margin-left: 60px;
+      }
+    }
+    &__imagearea {
+      margin-right: 30px;
+      @include media-breakpoint-up(lg) {
+        margin-top: -60px;
+        margin-bottom: 60px;
+        margin-right: 60px;
+        height: 100%;
+      }
+      picture {
+        @include imgLayout();
+      }
+    }
+  }
+}
+
+/* reversed version */
+.featureTextPanel--reverse {
+  padding-bottom: 0;
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 60px;
+  }
+  .featureTextPanel {
+    &__wrapper {
+      flex-direction: row-reverse;
+      display: flex;
+    }
+    &__contentarea {
+      background-color: map-get($palette, purpleTwo);
+      margin-right: 30px;
+      margin-left: 0;
+      @include media-breakpoint-up(lg) {
+        padding: 60px 220px 60px 60px;
+        width: calc(100% + 120px);
+        height: calc(100% - 120px);
+        margin-right: auto;
+        margin-left: auto;
+        &:after {
+          background-color: map-get($palette, purpleTwo);
+          content: '';
+          display: block;
+          width: 50vw;
+          height: calc(100% - 120px);
+          position: absolute;
+          left: -50vw;
+          top: 60px;
+        }
+      }
+      .bulletpoint--number {
+        @extend %h3;
+        margin-right: 10px;
+      }
+      .bulletpoint--content {
+        @extend %h4;
+      }
+      .button {
+        margin-top: 30px;
+      }
+    }
+    &__contentrow {
+      padding-bottom: 30px;
+      p {
+        @extend %bigger;
+      }
+      .button {
+        margin-top: 0 !important;
+      }
+    }
+  }
+  .thirdCol__content {
+    float: right;
+    @include media-breakpoint-up(lg) {
+      float: none;
+      width: calc(100% - 120px);
+      margin-left: 120px;
+    }
+    &:before {
+      right: 0;
+      left: auto;
+      @include media-breakpoint-up(lg) {
+        left: -60px;
+        right: auto;
+      }
+    }
+  }
+  .thirdCol__imagearea {
+    bottom: 30px;
+    left: 30px;
+    @include media-breakpoint-up(lg) {
+      bottom: auto;
+      left: auto;
+    }
+  }
+}
+
+/* styles for featureTextPanel set profile image */
+.featureTextPanel--people {
+  .thirdCol__wrapper {
+    &:after {
+      padding-bottom: 78%;
+    }
+  }
+  .thirdCol__imagearea {
+    &:after {
+      padding-bottom: 78%;
+      @include media-breakpoint-up(lg) {
+        padding-bottom: 82%;
+      }
+    }
+    picture {
+      padding-bottom: 78%;
+      @include media-breakpoint-up(lg) {
+        padding-bottom: 82%;
+      }
+    }
+  }
+}
+
+/* Themes for careers and partners */
+.theme--careers {
+  .featureTextPanel__prompt,
+  .thirdCol__content {
+    background-color: map-get($palette, purpleThemeTwo);
+    &:before {
+      background-color: map-get($palette, purpleThemeTwo);
+    }
+  }
+}
+
+.theme--partners {
+  .featureTextPanel__prompt,
+  .thirdCol__content {
+    background-color: map-get($palette, purpleThemeThree);
+    &:before {
+      background-color: map-get($palette, purpleThemeThree);
+    }
+  }
+}

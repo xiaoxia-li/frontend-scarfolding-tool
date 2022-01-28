@@ -1,0 +1,209 @@
+.articleRow {
+  position: relative;
+  @extend %standardGap;
+  padding-top: 60px;
+  @include media-breakpoint-up(lg) {
+    padding-top: 120px;
+  }
+  &:before,
+  &:after {
+    height: 0;
+    content: '';
+    position: absolute;
+    border-top: 3px solid map-get($palette, purpleTwo);
+    width: 100vw;
+    left: 0;
+    top: 30px;
+    display: block;
+    z-index: 1;
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+  &::after {
+    bottom: 30px;
+    top: auto;
+    @include media-breakpoint-up(lg) {
+      bottom: 0;
+    }
+  }
+
+  &__wrapper {
+    z-index: 2;
+    position: relative;
+    padding-bottom: 30px;
+    @include media-breakpoint-up(lg) {
+      padding-top: 60px;
+      padding-bottom: 120px;
+    }
+    &::before,
+    &::after {
+      @include media-breakpoint-up(lg) {
+        height: 0;
+        content: '';
+        display: block;
+        position: absolute;
+        border-top: 3px solid map-get($palette, purpleTwo);
+        width: 100vw;
+        right: 15px;
+        left: auto;
+        top: 0;
+      }
+      @include media-breakpoint-up(xl) {
+        right: 35px;
+      }
+    }
+    &::after {
+      @include media-breakpoint-up(lg) {
+        bottom: 0;
+        top: auto;
+      }
+    }
+  }
+  &__introPanel {
+    background-color: map-get($palette, purple);
+    padding: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    @include media-breakpoint-up(lg) {
+      padding: 50px 60px 30px 30px;
+      margin: -120px 0 0 35px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-right: 35px;
+    }
+    h4,
+    p {
+      color: map-get($palette, white);
+    }
+    .button {
+      margin-top: 20px;
+      @include media-breakpoint-up(lg) {
+        margin-top: 30px;
+      }
+    }
+  }
+  .article__tile {
+    @include media-breakpoint-up(xl) {
+      margin-right: 20px;
+    }
+  }
+}
+
+/* Reversed variant */
+.articleRow--reverserow {
+  .articleRow {
+    &__wrapper {
+      @include media-breakpoint-up(lg) {
+        flex-direction: row-reverse;
+      }
+    }
+    &__introPanel {
+      @include media-breakpoint-up(lg) {
+        margin: -120px 35px 0 0;
+      }
+      @include media-breakpoint-up(xl) {
+        margin-left: 35px;
+      }
+    }
+    &__wrapper {
+      &::before,
+      &::after {
+        right: auto;
+        left: 15px;
+        @include media-breakpoint-up(xl) {
+          right: 50px;
+          left: 35px;
+        }
+      }
+    }
+  }
+  .article__tile {
+    @include media-breakpoint-up(xl) {
+      margin: 0 0 0 20px;
+    }
+  }
+  .article__url {
+    @include media-breakpoint-up(xl) {
+      margin-left: 20px;
+    }
+  }
+}
+
+/* Article tiles */
+.article {
+  &__tile {
+    img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__type {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    @extend %extraSmall;
+  }
+  &__date {
+    @extend %small;
+  }
+  &__title {
+    margin-bottom: 20px;
+    display: block;
+    @extend %bodyLinkBold;
+  }
+  &__intro {
+    margin-bottom: 10px;
+    display: block;
+    @extend %small;
+  }
+  &__url {
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    text-transform: uppercase;
+    color: map-get($palette, purple);
+    [class^='icon-'],
+    [class*=' icon-'] {
+      font-size: 14px;
+      margin-left: 5px;
+    }
+  }
+}
+.articleRow--single {
+  &:before,
+  &:after {
+    display: none;
+  }
+  .article__title {
+    @extend %h3;
+  }
+  .article__content {
+    margin: 20px 0;
+    @include media-breakpoint-up(lg) {
+      margin: 0 50px;
+    }
+  }
+  .article__img {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include object-fit(cover);
+    }
+  }
+}
+/* Themes for careers and partners */
+.theme--careers {
+  .articleRow__introPanel {
+    background-color: map-get($palette, purpleThemeTwo);
+  }
+}
+
+.theme--partners {
+  .articleRow__introPanel {
+    background-color: map-get($palette, purpleThemeThree);
+  }
+}

@@ -1,0 +1,307 @@
+%container {
+  width: 100%;
+  @include media-breakpoint-up(sm) {
+    width: 540px;
+  }
+  @include media-breakpoint-up(md) {
+    width: 720px;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 960px;
+  }
+  @include media-breakpoint-up(xl) {
+    width: 1140px;
+  }
+  @include media-breakpoint-up(xxl) {
+    width: 1320px;
+  }
+}
+#onetrust-banner-sdk {
+  background-color: map-get($palette, offWhite) !important;
+}
+#onetrust-consent-sdk {
+  border: 1px solid transparent !important;
+
+  *:focus {
+    outline: none !important;
+  }
+  #onetrust-policy-title {
+    float: none !important;
+  }
+  #onetrust-policy-text {
+    float: none !important;
+    margin: 0 !important;
+  }
+  #onetrust-policy {
+    margin: 0 !important;
+    .cookieWrapper {
+      margin: 0 auto;
+      @extend %container;
+      @extend %standardGap;
+      .titleOne {
+        @extend %h2;
+        margin-bottom: 20px;
+      }
+      .titleTwo {
+        @extend %h4;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        color: map-get($palette, purple);
+      }
+      p {
+        @extend %p;
+      }
+      .highlight {
+        color: map-get($palette, purple);
+      }
+    }
+    .cookieContentOne {
+      @include media-breakpoint-up(lg) {
+        columns: 1;
+        column-gap: 30px;
+      }
+      @include media-breakpoint-up(xl) {
+        column-gap: 50px;
+      }
+    }
+    .contentWrapperTwo {
+      background-color: map-get($palette, white);
+      padding: 20px;
+      @include media-breakpoint-up(lg) {
+        padding: 30px;
+      }
+      p {
+        @extend %small;
+        width: 100%;
+        @include media-breakpoint-up(lg) {
+          width: 50%;
+        }
+      }
+    }
+  }
+  #onetrust-group-container {
+    width: 100% !important;
+  }
+  .ot-sdk-container {
+    background-color: map-get($palette, offWhite) !important;
+    #onetrust-button-group-parent {
+      position: relative !important;
+      left: 0 !important;
+      width: 100% !important;
+      margin: 0 !important;
+      #onetrust-button-group {
+        background-color: map-get($palette, white) !important;
+        margin: 0 !important;
+        @extend %container;
+      }
+    }
+    #onetrust-pc-btn-handler {
+      border: 2px solid map-get($palette, purple) !important;
+      text-transform: uppercase;
+      padding: 11px 20px 9px !important;
+      text-decoration: none !important;
+      font-size: 18px !important;
+      color: map-get($palette, purple) !important;
+      @include media-breakpoint-up(md) {
+        float: left;
+        margin-left: 20px !important;
+      }
+      @include media-breakpoint-up(lg) {
+        margin-left: 30px !important;
+      }
+    }
+    #onetrust-accept-btn-handler {
+      text-transform: uppercase;
+      background-color: map-get($palette, purple) !important;
+      padding: 11px 20px 9px !important;
+      border: 2px solid map-get($palette, purple) !important;
+      font-size: 18px !important;
+      @include media-breakpoint-up(md) {
+        margin-right: 20px !important;
+        float: right;
+      }
+      @include media-breakpoint-up(lg) {
+        margin-right: 30px !important;
+      }
+    }
+  }
+  #onetrust-close-btn-container {
+    display: none;
+  }
+  #onetrust-pc-sdk {
+    .category-menu-switch-handler {
+      border-bottom: map-get($palette, purpleTwo) !important;
+      padding-right: 0 !important;
+      padding-left: 6px !important;
+    }
+    .ot-always-active {
+      color: map-get($palette, purple) !important;
+      font-size: 16px !important;
+    }
+    .ot-close-icon {
+      background-size: 15px !important;
+    }
+    #ot-pc-title {
+      color: map-get($palette, purple) !important;
+      font-size: 20px !important;
+      max-width: 100% !important;
+      margin-top: 7px !important;
+      @include media-breakpoint-up(lg) {
+        font-size: 24px !important;
+      }
+    }
+    h3 {
+      font-size: 17px !important;
+    }
+    .ot-active-menu {
+      border-color: map-get($palette, pink) !important;
+    }
+    .ot-pc-header {
+      border-bottom: 1px solid map-get($palette, purpleTwo) !important;
+    }
+    .ot-pc-footer {
+      border-top: 1px solid map-get($palette, purpleTwo) !important;
+      bottom: 2px !important;
+    }
+    .ot-pc-footer-logo {
+      height: 32px !important;
+      background-color: map-get($palette, offWhite) !important;
+    }
+
+    .ot-tab-desc {
+      h3 {
+        font-size: 20px !important;
+      }
+      p {
+        font-size: 16px !important;
+        a {
+          color: map-get($palette, purple) !important;
+        }
+      }
+    }
+    #accept-recommended-btn-handler,
+    .onetrust-close-btn-handler {
+      text-transform: uppercase !important;
+      background-color: map-get($palette, purple) !important;
+      padding: 11px 20px 9px !important;
+      border: 2px solid map-get($palette, purple) !important;
+      font-size: 18px !important;
+    }
+    .ot-grp-desc {
+      font-size: 16px !important;
+      a {
+        color: map-get($palette, purple) !important;
+      }
+    }
+  }
+}
+
+/* Style for cookie list */
+#ot-sdk-cookie-policy {
+  #cookie-policy-title {
+    @extend %h2;
+    color: map-get($palette, purple) !important;
+  }
+  #cookie-policy-description {
+    color: map-get($palette, greyOne) !important;
+    font-size: 16px !important;
+    @include media-breakpoint-up(lg) {
+      font-size: 18px !important;
+    }
+  }
+  h4.ot-sdk-cookie-policy-group {
+    font-size: 20px !important;
+    color: map-get($palette, greyOne) !important;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-family: $font-family--medium !important;
+    @include media-breakpoint-up(lg) {
+      font-size: 24px !important;
+      margin-bottom: 30px;
+      margin-top: 50px;
+    }
+  }
+  h5.ot-sdk-cookie-policy-group {
+    font-size: 18px !important;
+    color: map-get($palette, greyOne) !important;
+    @include media-breakpoint-up(lg) {
+      font-size: 21px !important;
+    }
+  }
+  .ot-sdk-cookie-policy-group-desc {
+    font-size: 16px !important;
+    color: map-get($palette, greyOne) !important;
+    @include media-breakpoint-up(lg) {
+      font-size: 18px !important;
+    }
+  }
+  .ot-sdk-subgroup {
+    margin-left: 0 !important;
+    ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-left: 5px !important;
+      @include media-breakpoint-up(lg) {
+        padding-left: 30px;
+      }
+      &:before {
+        content: '';
+        display: block;
+        background-color: map-get($palette, pink);
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        left: 0;
+        top: 7px;
+      }
+      &::marker {
+        font-size: 0 !important;
+      }
+    }
+  }
+  table {
+    border: none !important ;
+    min-width: 600px;
+    thead {
+      background-color: map-get($palette, purpleTwo) !important;
+    }
+    th {
+      font-family: $font-family--medium !important;
+      padding: 12px !important;
+      border: none !important;
+      font-size: 16px !important;
+      color: map-get($palette, greyOne) !important;
+      background-color: transparent !important;
+      @include media-breakpoint-up(lg) {
+        padding: 15px !important;
+        font-size: 18px !important;
+      }
+    }
+    td {
+      padding: 12px !important;
+      border: none !important;
+      font-size: 16px !important;
+      color: map-get($palette, greyOne) !important;
+      @include media-breakpoint-up(lg) {
+        padding: 15px !important;
+        font-size: 18px !important;
+      }
+    }
+    tbody {
+      tr {
+        &:nth-child(2n) {
+          background-color: map-get($palette, purpleThree) !important;
+        }
+      }
+    }
+    a {
+      font-family: $font-family--medium !important;
+      color: map-get($palette, purple) !important;
+      background-color: transparent !important;
+      text-decoration: none !important;
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
+  }
+}

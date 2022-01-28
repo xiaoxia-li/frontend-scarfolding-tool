@@ -1,0 +1,197 @@
+.inline__quote {
+  position: relative;
+  font-size: 18px;
+  margin-bottom: 30px;
+  @include media-breakpoint-up(lg) {
+    font-size: 24px;
+  }
+  p {
+    font-size: 18px;
+    @include media-breakpoint-up(lg) {
+      font-size: 24px;
+    }
+  }
+  * {
+    z-index: 5;
+    position: relative;
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+    top: 60px;
+    left: 60px;
+    background-color: map-get($palette, purpleThree);
+    z-index: 1;
+  }
+  &--noBackground {
+    &:after {
+      display: none;
+    }
+  }
+
+  &--person {
+    margin-top: 20px;
+  }
+  &--person,
+  &--position {
+    display: block;
+    @extend %p;
+    &:nth-child(1) {
+      margin-top: 30px;
+    }
+  }
+  .icon-quotemarks {
+    display: block;
+    color: map-get($palette, purple);
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+}
+
+.inline__list {
+  border-top: 1px solid map-get($palette, purpleTwo);
+  li {
+    padding: 10px;
+    border-bottom: 1px solid map-get($palette, purpleTwo);
+    @extend %p;
+  }
+}
+.wysiwyg {
+  .inline__list,
+  .facilitiesList__list {
+    li {
+      padding-left: 0;
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.inline__bulletList,
+.inline__numberList {
+  @extend %p;
+  background-color: map-get($palette, purpleThree);
+  padding: 15px;
+  @include media-breakpoint-up(lg) {
+    padding: 30px;
+  }
+}
+.wysiwyg,
+.inline__bulletList {
+  li {
+    @extend %p;
+    line-height: 26px;
+  }
+  ul {
+    padding-left: 8px;
+    li {
+      position: relative;
+      padding-left: 30px;
+      &:before {
+        content: '';
+        background-color: map-get($palette, pink);
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        left: 0;
+        top: 7px;
+      }
+      ul {
+        li:before {
+          content: ' - ';
+          top: 0;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+.wysiwyg,
+.inline__numberList {
+  li {
+    @extend %p;
+    line-height: 26px;
+    padding-left: 30px;
+    position: relative;
+    li {
+      padding-left: 50px;
+    }
+  }
+  ol {
+    padding-left: 8px;
+    counter-reset: item;
+    ol {
+      padding-left: 30px;
+    }
+    li:before {
+      content: counters(item, '.') '. ';
+      counter-increment: item;
+      color: map-get($palette, greyOne);
+      position: absolute;
+    }
+    li:before {
+      color: map-get($palette, purple);
+      margin-right: 10px;
+      font-family: $font-family--medium;
+      left: 0;
+    }
+    li li:before {
+      color: map-get($palette, greyOne);
+      font-family: $font-family;
+      margin-right: 8px;
+    }
+  }
+}
+.wysiwyg,
+.inline__form {
+  table {
+    font-family: $font-family;
+    min-width: 600px;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  thead {
+    font-family: $font-family--medium;
+    background-color: map-get($palette, purpleTwo);
+  }
+  th {
+    font-family: $font-family--medium;
+    padding: 12px;
+    border-bottom: none;
+    @include media-breakpoint-up(lg) {
+      padding: 15px;
+    }
+  }
+  td {
+    font-family: $font-family;
+    padding: 12px;
+    border-bottom: none;
+    @include media-breakpoint-up(lg) {
+      padding: 15px;
+    }
+  }
+  tbody {
+    tr {
+      &:nth-child(2n) {
+        background-color: map-get($palette, purpleThree);
+      }
+    }
+  }
+  /* Override the kentico editor table styles */
+  .fr-view table {
+    font-family: $font-family;
+    th {
+      background-color: transparent;
+      border: none;
+      font-family: $font-family--medium;
+    }
+    td {
+      font-family: $font-family;
+      border: none;
+    }
+  }
+}

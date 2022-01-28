@@ -1,0 +1,116 @@
+.ratingsReviewsPanel {
+  @extend %standardGap;
+  .border-left {
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      width: 2px;
+      height: calc(100% - 120px);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: map-get($palette, purpleThree);
+    }
+  }
+  &__reviews {
+    p {
+      @extend %small;
+      margin-bottom: 5px;
+    }
+  }
+  &__rating {
+    margin-bottom: 50px;
+    .rating {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: map-get($palette, purpleThemeThree);
+      color: map-get($palette, white);
+      display: block;
+      float: left;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: $font-family--medium;
+      position: relative;
+      font-size: 20px;
+      margin-right: 20px;
+      &::before {
+        content: '';
+        display: block;
+        border-radius: 50%;
+        border: 3px solid map-get($palette, white);
+        width: 44px;
+        height: 44px;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+      }
+    }
+  }
+  .slick-arrow {
+    display: none !important;
+  }
+}
+.slick-dots {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  li {
+    display: inline-block;
+    margin: 0 5px;
+    &.slick-active {
+      button {
+        background-color: map-get($palette, pink);
+      }
+    }
+  }
+  button {
+    border: none;
+    background-color: map-get($palette, purpleTwo);
+    font-size: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+}
+
+/* cqc-widget style overide */
+.ratingsReviewsPanel .cqc-widget {
+  width: 100% !important;
+  margin: 0 !important;
+  background: unset !important;
+  border: none !important;
+  .cqc-container {
+    background: unset !important;
+    padding: 0 !important;
+  }
+
+  .cqc-widget-inner {
+    font-family: $font-family !important;
+    .cqc-widget-normal {
+      margin: 0 !important;
+      padding: 10px 0 !important;
+      background-color: transparent !important;
+    }
+  }
+
+  .widget-button-new-style {
+    text-transform: uppercase !important;
+    padding: 11px 20px 9px !important;
+    margin-top: 20px !important;
+    box-shadow: unset !important;
+    border: 2px solid map-get($palette, purple) !important;
+    font-size: 18px !important;
+    font-family: $font-family !important;
+    background: unset !important;
+    border-radius: 0 !important;
+    font-weight: normal !important;
+    &:hover {
+      text-decoration: none;
+      color: map-get($palette, white) !important;
+      background-color: map-get($palette, purple) !important;
+    }
+  }
+}

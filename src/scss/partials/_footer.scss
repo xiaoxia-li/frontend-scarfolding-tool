@@ -1,0 +1,112 @@
+.footer {
+  $block: &;
+  margin-top: 30px;
+  @include media-breakpoint-up(md) {
+    margin-top: 60px;
+  }
+  a {
+    @include font($size: 16px, $height: 19px, $colour: map-get($palette, white));
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__wrap {
+    background-color: map-get($palette, purple);
+    @include font($size: 16px, $height: 19px, $colour: map-get($palette, white));
+    padding: 30px 0;
+    position: relative;
+    @include media-breakpoint-up(md) {
+      padding: 50px 0 30px;
+    }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url('../img/overlay--footer.svg');
+      background-repeat: no-repeat;
+      background-position: -150px -100px;
+      background-size: 130%;
+      top: 0;
+      left: 0;
+      @include media-breakpoint-up(lg) {
+        width: 100%;
+        height: 100%;
+        background-position: center -200px;
+        background-size: 100%;
+      }
+      @include media-breakpoint-up(xl) {
+        background-position: center -373px;
+      }
+    }
+  }
+  &__links {
+    padding-left: 0;
+    @include media-breakpoint-up(md) {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__link {
+    padding: 3px 0;
+    margin-right: 20px;
+    display: block;
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      padding: 10px 0;
+    }
+  }
+  &__other {
+    .footer__link {
+      padding-bottom: 10px;
+    }
+    p {
+      color: map-get($palette, white);
+    }
+  }
+  &__socialmedias {
+    margin-top: 20px;
+  }
+  &__socialmedia {
+    margin-right: 20px;
+    &:before {
+      font-size: 44px;
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+  &__scrolltop {
+    position: absolute;
+    right: 0;
+    top: -75px;
+    text-transform: uppercase;
+    height: 45px;
+    align-items: center;
+    cursor: pointer;
+    display: none !important;
+    @include media-breakpoint-up(md) {
+      top: -95px;
+      display: flex !important;
+      margin-top: 0 !important;
+    }
+    .icon-backtotop {
+      margin-left: 10px;
+    }
+  }
+}
+
+.theme--careers .footer {
+  &__wrap {
+    background-color: map-get($palette, purpleThemeTwo);
+  }
+}
+
+.theme--partners .footer {
+  &__wrap {
+    background-color: map-get($palette, purpleThemeThree);
+  }
+}

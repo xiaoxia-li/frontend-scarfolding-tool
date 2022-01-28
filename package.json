@@ -1,0 +1,22 @@
+{
+  "name": "parcel-repo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.2.1",
+    "parcel": "^2.2.1",
+    "posthtml-doctype": "^1.1.1",
+    "posthtml-include": "^1.7.2"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "slick-carousel": "^1.8.1"
+  },
+  "scripts": {
+    "delete": "rm -rf ./dist .parcel-cache",
+    "dev": "rm -rf ./dist .parcel-cache & parcel src/index.html",
+    "build": "rm -rf ./dist .parcel-cache & parcel src/templates/all.html  --no-source-maps",
+    "copy": "rm -rf ./dist .parcel-cache & parcel src/templates/all.html --public-url /test --no-source-maps"
+  }
+}

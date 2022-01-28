@@ -1,0 +1,174 @@
+.overlayGallery {
+  padding-left: 0;
+  padding-right: 0;
+  $block: '.overlayGallery';
+  &TriggerRow {
+    height: 40px;
+  }
+  &__thumbnails {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+  }
+  &__thumbnail {
+    margin: 20px 15px 20px 0;
+    cursor: pointer;
+    picture {
+      @include imgLayout($ratioMobile: 50.5%, $ratioDesktop: 50.5%);
+      width: 150px;
+      height: 100%;
+      @include media-breakpoint-up(lg) {
+        width: 180px;
+      }
+    }
+    &.current {
+      border: 2px solid map-get($palette, purple);
+    }
+  }
+  &__thumbnailsWrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &__item {
+    picture {
+      @include imgLayout($ratioMobile: 82.1%, $ratioDesktop: 50.5%);
+      z-index: 10;
+    }
+    #{$block}__caption:not(.d-none) + #{$block}__itemWrapper {
+      margin-top: 0;
+    }
+  }
+  &__itemWrapper {
+    position: relative;
+    margin-top: 15px;
+    @include media-breakpoint-up(lg) {
+      margin-top: 30px;
+    }
+    .playBtn {
+      position: absolute;
+      left: calc(50% - 30px);
+      top: calc(50% - 30px);
+      @include media-breakpoint-up(lg) {
+        left: calc(50% - 60px);
+        top: calc(50% - 60px);
+      }
+    }
+  }
+  &__caption {
+    @extend %bigger;
+    padding: 15px 0;
+    > span {
+      margin-right: 20px;
+    }
+  }
+}
+
+/* Slick nav buttons */
+.overlayGallery {
+  .slick {
+    &-arrow {
+      position: absolute;
+      z-index: 10;
+      top: calc(50% - 23px);
+      display: none !important;
+      @include media-breakpoint-up(lg) {
+        display: block !important;
+      }
+    }
+    &-prev {
+      left: -48px;
+    }
+    &-next {
+      right: -48px;
+    }
+  }
+}
+
+/* overlayGalleryModal style */
+.overlayGalleryModal {
+  .modal-header {
+    padding: 10px;
+  }
+  .modal-dialog {
+    width: 100%;
+    margin-right: -100%;
+    transition: margin-right 500ms ease;
+    margin-top: 0 !important;
+    height: 100vh !important;
+    overflow: hidden;
+  }
+  .modal-body {
+    padding: 0;
+    @include media-breakpoint-up(lg) {
+      padding: 0 50px;
+    }
+  }
+  .tabsPanel {
+    height: calc(100vh - 30px);
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+      max-width: 1000px;
+    }
+    margin: 0 auto;
+    overflow: auto;
+  }
+}
+
+.overlayGalleryModal,
+.tabsPanel {
+  .nav-tabs {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0;
+    border-bottom: 2px solid map-get($palette, purpleTwo);
+  }
+  .nav-link {
+    border: none !important;
+    @extend %h4;
+    color: map-get($palette, purple);
+    padding: 10px 5px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    @include media-breakpoint-up(lg) {
+      padding: 10px 30px;
+      font-size: 24px;
+    }
+    &.active {
+      @include arrowAlt($width: 20px, $height: 16px, $left: calc(50% - 30px), $colorafter: map-get($palette, white));
+      &:before {
+        bottom: -20px;
+      }
+      &:after {
+        bottom: -23px;
+      }
+    }
+  }
+}
+
+.overlayGalleryTrigger {
+  &Row__wrapper {
+    position: relative;
+  }
+  position: absolute;
+  margin: 0;
+  left: 15px;
+  top: -30px;
+  @include media-breakpoint-up(lg) {
+    top: -60px;
+  }
+
+  &.align-bottom-left {
+    left: 0px;
+    top: 10px;
+  }
+}
+
+.overlayGallery--photos {
+  .overlayGallery__item,
+  .overlayGallery__thumbnail {
+    picture img {
+      @include object-fit(contain);
+    }
+  }
+}

@@ -1,0 +1,102 @@
+.quickReader {
+  &.overlayPanel--headerfixed .modal-body {
+    height: 100%;
+  }
+  .modal-header {
+    h1 {
+      @extend %h2;
+      margin: 0;
+      @include media-breakpoint-up(lg) {
+        font-size: 64px;
+      }
+    }
+  }
+  .modal-body {
+    .portraitImage--background {
+      display: none;
+    }
+    .portraitImage.float--right picture {
+      margin-left: 0;
+    }
+    img {
+      align-self: center;
+      margin-right: 0 !important;
+      margin-top: 30px !important;
+      margin-bottom: 30px !important;
+    }
+  }
+  .modal-dialog {
+    padding: 0;
+  }
+  .modal {
+    &-dialog {
+      padding: 0;
+      width: 100%;
+      @include media-breakpoint-up(lg) {
+        width: 900px;
+      }
+    }
+    &-header {
+      position: relative;
+      padding: 50px 20px 20px;
+      @include media-breakpoint-up(lg) {
+        padding: 50px 30px 30px;
+      }
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+    &-body {
+      padding: 0 40px 20px 20px;
+      @include media-breakpoint-up(lg) {
+        padding: 0 60px 40px 40px;
+        height: calc(100% - 100px);
+      }
+    }
+  }
+  .standardContent {
+    width: 100%;
+    margin: 0;
+    h2 {
+      margin-left: 0;
+    }
+    .inline__quote {
+      margin-left: 0;
+    }
+    .portraitImage {
+      z-index: 5;
+      picture {
+        display: flex;
+        margin-right: 0;
+        img {
+          margin-left: 0;
+          margin-right: 60px;
+          max-width: 350px;
+          width: 70%;
+          @include media-breakpoint-up(lg) {
+            max-width: 380px;
+          }
+        }
+      }
+      &--background {
+        left: 0;
+        @include media-breakpoint-up(lg) {
+          left: 120px;
+        }
+      }
+    }
+    .imageCaption {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+    .landscapeImage {
+      width: 100% !important;
+      img {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block;
+        float: none !important;
+      }
+    }
+  }
+}

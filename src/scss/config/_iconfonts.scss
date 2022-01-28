@@ -1,0 +1,239 @@
+@font-face {
+  font-family: 'careukicons';
+  src: url('../fonts/careukicons.eot?7wrmt5');
+  src: url('../fonts/careukicons.eot?7wrmt5#iefix') format('embedded-opentype'),
+    url('../fonts/careukicons.ttf?7wrmt5') format('truetype'), url('../fonts/careukicons.woff?7wrmt5') format('woff'),
+    url('../fonts/careukicons.svg?7wrmt5#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.theme--careuk,
+.theme--careers,
+.theme--partners {
+  [class^='icon-'],
+  [class*=' icon-'] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'careukicons' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .icon-add:before {
+    content: '\e902';
+    color: #560a6a;
+  }
+  .icon-add_big:before {
+    content: '\e903';
+    color: #560a6a;
+  }
+  .icon-arrow:before {
+    content: '\e904';
+    color: #560a6a;
+  }
+  .icon-arrow_down:before {
+    content: '\e905';
+    color: #560a6a;
+  }
+
+  .icon-close:before {
+    content: '\e909';
+    color: #560a61;
+  }
+
+  .icon-favourite-add:before {
+    content: '\e90e';
+    color: #560a6a;
+  }
+  .icon-favourite-added .path1:before {
+    content: '\e90f';
+    color: rgb(86, 10, 106);
+  }
+  .icon-favourite-added .path2:before {
+    content: '\e910';
+    margin-left: -1.1669921875em;
+    color: rgb(215, 8, 139);
+  }
+
+  .icon-filters:before {
+    content: '\e912';
+  }
+  .icon-info:before {
+    content: '\e913';
+    color: #560a6a;
+  }
+  .icon-info-outline:before {
+    content: '\e914';
+    color: #560a6a;
+  }
+  .icon-jobsearch:before {
+    content: '\e915';
+    color: #560a6a;
+  }
+
+  .icon-link-internal:before {
+    content: '\e919';
+    color: #560a6a;
+  }
+  .icon-link-internal2:before {
+    content: '\e91a';
+    color: #560a6a;
+  }
+
+  .icon-menu:before {
+    content: '\e91d';
+    color: #560a6a;
+  }
+  .icon-no:before {
+    content: '\e91e';
+    color: #aaacad;
+  }
+  .icon-passwordEye:before {
+    content: '\e91f';
+    color: #d7088b;
+  }
+
+  .icon-share:before {
+    content: '\e923';
+    color: #560a6a;
+  }
+
+  .icon-Web:before {
+    content: '\e925';
+  }
+
+  /* Applied */
+  .icon-bar:before {
+    content: '\e92d';
+  }
+  .icon-pharmacy:before {
+    content: '\e92c';
+  }
+  .icon-music:before {
+    content: '\e92b';
+  }
+  .icon-library:before {
+    content: '\e92a';
+  }
+  .icon-hairBeauty:before {
+    content: '\e929';
+  }
+  .icon-gamesRoom:before {
+    content: '\e928';
+  }
+  .icon-garden:before {
+    content: '\e927';
+  }
+  .icon-cinemaRoom:before {
+    content: '\e900';
+  }
+  .icon-shop:before {
+    content: '\e93a';
+  }
+  .icon-retroThemedLounge:before {
+    content: '\e939';
+  }
+  .icon-reminiscenceRoom:before {
+    content: '\e938';
+  }
+  .icon-namasteRoom:before {
+    content: '\e937';
+  }
+  .icon-multiFaithRoom:before {
+    content: '\e936';
+  }
+  .icon-minibusForOutings:before {
+    content: '\e935';
+  }
+  .icon-localShops:before {
+    content: '\e934';
+  }
+  .icon-familyGuestRoom:before {
+    content: '\e933';
+  }
+  .icon-conservatory:before {
+    content: '\e932';
+  }
+  .icon-concierge:before {
+    content: '\e931';
+  }
+  .icon-churchServices:before {
+    content: '\e930';
+  }
+  .icon-cafe:before {
+    content: '\e92f';
+  }
+  .icon-bowling:before {
+    content: '\e92e';
+  }
+  .icon-gym:before {
+    content: '\e93b';
+  }
+
+  .icon-facebook:before {
+    content: '\e90c';
+  }
+  .icon-twitter:before {
+    content: '\e924';
+  }
+  .icon-linkedin:before {
+    content: '\e917';
+  }
+  .icon-backtotop:before {
+    content: '\e906';
+  }
+  .icon-call:before {
+    content: '\e907';
+  }
+  .icon-carehomesearch:before {
+    content: '\e908';
+  }
+  .icon-favourite:before {
+    content: '\e90d';
+  }
+  .icon-favourite-filled:before {
+    content: '\e911';
+  }
+  .icon-download:before {
+    content: '\e90a';
+  }
+  .icon-quotemarks:before {
+    content: '\e921';
+  }
+  .icon-link-external:before {
+    content: '\e918';
+  }
+  .icon-map-pin:before {
+    content: '\e91c';
+  }
+  .icon-play:before {
+    content: '\e920';
+  }
+  .icon-360:before {
+    content: '\e901';
+  }
+  .icon-error-outline:before {
+    content: '\e90b';
+  }
+  .icon-link:before {
+    content: '\e916';
+  }
+  .icon-rating:before {
+    content: '\e922';
+  }
+  .icon-yes:before {
+    content: '\e926';
+  }
+  .icon-location:before {
+    content: '\e91b';
+  }
+}

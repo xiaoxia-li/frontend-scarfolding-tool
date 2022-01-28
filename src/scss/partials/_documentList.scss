@@ -1,0 +1,63 @@
+.docList {
+  @extend %p;
+  @include media-breakpoint-up(lg) {
+    display: flex !important;
+  }
+  &__table {
+    width: 100%;
+  }
+  &__header {
+    background-color: map-get($palette, purpleTwo);
+    border-top: 1px solid map-get($palette, purpleTwo);
+    display: none !important;
+    @include media-breakpoint-up(lg) {
+      display: flex !important;
+    }
+  }
+  &__row {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    position: relative;
+    border-bottom: 1px solid map-get($palette, purpleTwo);
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+  }
+  .date {
+    width: calc(100% - 20px);
+    padding-right: 30px;
+    padding-bottom: 5px;
+    @include media-breakpoint-up(lg) {
+      width: 180px;
+      padding-bottom: 0;
+      padding-right: 10px;
+    }
+  }
+  .reports {
+    width: calc(100% - 20px);
+    padding-right: 30px;
+    color: map-get($palette, purple);
+    @include media-breakpoint-up(lg) {
+      width: calc(100% - 230px);
+      padding-right: 10px;
+    }
+  }
+  .pdf {
+    text-align: center;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    @include media-breakpoint-up(lg) {
+      width: 50px;
+      position: relative;
+      right: auto;
+      top: auto;
+    }
+
+    .icon-download {
+      color: map-get($palette, purple) !important;
+      font-size: 25px;
+    }
+  }
+}

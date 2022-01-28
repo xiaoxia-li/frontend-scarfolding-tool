@@ -1,0 +1,443 @@
+.header {
+  position: relative;
+  z-index: 100;
+
+  $block: &;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    @include media-breakpoint-up(md) {
+      flex-direction: column;
+    }
+  }
+
+  &__umbrella {
+    background-color: map-get($palette, purple);
+    overflow-y: auto;
+    &-links {
+      display: flex;
+      flex-direction: row;
+      @include media-breakpoint-up(sm) {
+        justify-content: center;
+      }
+    }
+    &-link {
+      @include font($size: 14px, $spacing: 0.88px, $height: 17px, $colour: map-get($palette, white));
+      padding: 16px 15px 11px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      float: left;
+
+      &:hover {
+        background-color: map-get($palette, white);
+        color: map-get($palette, purple);
+        text-decoration: none;
+      }
+      &.selected {
+        background-color: map-get($palette, white);
+        color: map-get($palette, purple);
+        text-decoration: none;
+      }
+    }
+  }
+  &__navigation {
+    background-color: map-get($palette, white);
+  }
+
+  &__navwrapper {
+    height: 60px;
+    @include media-breakpoint-up(md) {
+      height: 94px;
+    }
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: row;
+    cursor: pointer;
+    &--image {
+      z-index: 100;
+      img {
+        height: 35px;
+        margin-bottom: -12px;
+        @include media-breakpoint-up(md) {
+          height: 46px;
+          margin-bottom: -8px;
+        }
+      }
+    }
+  }
+  &__carehomeTitle {
+    @extend %h3;
+    @include media-breakpoint-up(lg) {
+      font-size: 24px;
+      margin: 12px 10px 0 20px;
+      line-height: 26px;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 32px;
+    }
+  }
+
+  .navicon {
+    width: 34px;
+    height: 20px;
+    position: relative;
+    transform: rotate(0deg);
+    display: inline-block;
+    margin-right: 5px;
+    z-index: 100;
+    @include media-breakpoint-up(md) {
+      margin-right: 20px;
+      margin-top: -3px;
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background-color: map-get($palette, purple);
+      border-radius: 2px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: 0.25s ease-in-out;
+
+      &:nth-child(1) {
+        top: 0px;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 9px;
+      }
+      &:nth-child(4) {
+        top: 10px;
+        height: 0;
+        &::before {
+          content: 'menu';
+          @include font($family: $font-family--medium, $size: 12px, $colour: map-get($palette, purple));
+          text-transform: uppercase;
+          @include media-breakpoint-up(md) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    &.open span {
+      &:nth-child(1) {
+        top: 9px;
+        width: 0%;
+        left: 50%;
+      }
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+      &:nth-child(4) {
+        top: 9px;
+        width: 0%;
+        left: 50%;
+        display: none;
+      }
+    }
+  }
+
+  &__shortcut {
+    text-transform: uppercase;
+    @include font($family: $font-family--medium, $size: 11px, $height: 10px, $colour: map-get($palette, purple));
+    padding: 40px 0 0 0;
+    margin-left: 6px;
+    position: relative;
+    color: map-get($palette, purple);
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    &:hover {
+      color: map-get($palette, purple);
+      text-decoration: none;
+    }
+    @include media-breakpoint-up(sm) {
+      margin-left: 10px;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    [class^='icon-'],
+    [class*=' icon-'] {
+      position: absolute;
+      font-size: 22px;
+      top: 5px;
+      left: calc(50% - 13px);
+      @include media-breakpoint-up(lg) {
+        left: calc(50% - 15px);
+        top: 0;
+      }
+    }
+    .icon {
+      &-call {
+        font-size: 23px;
+        margin-top: 2px;
+      }
+      &-carehomesearch {
+        font-size: 28px;
+      }
+      &-favourite {
+        margin-top: 3px;
+      }
+      &-jobsearch {
+        font-size: 28px;
+        margin-top: 1px;
+      }
+    }
+  }
+
+  // Navigation style when the header is fixed
+  &--fixed {
+    .navigation {
+      @include media-breakpoint-up(md) {
+        margin-top: -60px !important;
+      }
+    }
+    .header__logo--image img {
+      @include media-breakpoint-up(md) {
+        height: 36px;
+      }
+    }
+    h1,
+    .header__carehomeTitle {
+      margin-top: 5px;
+    }
+    + .page-body {
+      margin-top: 94px;
+      @include media-breakpoint-up(md) {
+        margin-top: 144px;
+      }
+    }
+  }
+  .navigation {
+    position: fixed;
+    background-color: map-get($palette, white);
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    @include media-breakpoint-up(md) {
+      background-color: rgba(0, 0, 0, 0.3);
+      margin-top: -94px;
+    }
+    &--open::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      height: 100vh;
+      background-color: map-get($palette, white);
+      @include media-breakpoint-up(md) {
+        width: calc(50vw - 360px + 60px);
+      }
+      @include media-breakpoint-up(lg) {
+        width: calc(50vw - 480px + 60px);
+      }
+      @include media-breakpoint-up(xl) {
+        width: calc(50vw - 600px + 60px);
+      }
+    }
+
+    &__backbtnone,
+    &__backbtntwo {
+      position: absolute;
+      display: block;
+      top: 8px;
+      color: map-get($palette, purple);
+      left: calc(100vw + 25px);
+      width: 100vw;
+      padding: 0 25px;
+      cursor: pointer;
+      @include media-breakpoint-up(sm) {
+        left: calc(150vw - 245px);
+        width: 100vw;
+        padding: 0 calc(50vw - 245px);
+      }
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+    }
+
+    &__backbtntwo {
+      left: calc(200vw + 25px);
+      @include media-breakpoint-up(sm) {
+        left: calc(250vw - 245px);
+      }
+    }
+    .rootlevel {
+      position: relative;
+      height: 100vh;
+      background-color: map-get($palette, white);
+      @include media-breakpoint-up(md) {
+        padding-top: 94px;
+        width: 290px;
+        height: calc(100vh + 60px);
+      }
+      .selected,
+      .selected:hover {
+        color: map-get($palette, white) !important;
+        background-color: map-get($palette, purple) !important;
+        &:after {
+          border-color: map-get($palette, white) !important;
+        }
+        > a {
+          color: map-get($palette, white) !important;
+        }
+      }
+    }
+    &--open {
+      .rootlevel {
+        animation: rootSlideinMobile 500ms forwards ease;
+        @include media-breakpoint-up(md) {
+          animation: rootSlidein 500ms forwards ease;
+        }
+      }
+    }
+    a {
+      font-family: $font-family;
+      display: block;
+    }
+
+    .sublevelOne,
+    .sublevelTwo {
+      display: none;
+      position: absolute;
+      left: 0;
+      width: 100%;
+
+      @include media-breakpoint-up(md) {
+        background-color: map-get($palette, white);
+        height: calc(100vh + 60px);
+        box-sizing: border-box;
+        &::before {
+          content: '';
+          display: block;
+          width: 1px;
+          height: 100%;
+          background-color: map-get($palette, purpleTwo);
+          position: absolute;
+        }
+      }
+      li {
+        &:nth-child(1) a {
+          font-family: $font-family--medium;
+        }
+      }
+    }
+
+    .selected {
+      .sublevelOne,
+      .selected .sublevelTwo {
+        display: block;
+        top: 40px;
+        color: map-get($palette, purple);
+        left: 100vw;
+        width: 100vw;
+        padding: 0 15px;
+        @include media-breakpoint-up(sm) {
+          left: 100vw;
+          width: 100vw;
+          padding: 0 calc(50vw - 270px + 15px);
+        }
+        @include media-breakpoint-up(md) {
+          padding-top: 94px !important;
+          top: 0;
+          left: 0;
+          width: 290px;
+          padding: 0;
+          animation: slidein 500ms forwards ease;
+        }
+      }
+    }
+    .selected .selected .sublevelTwo {
+      top: 0;
+    }
+    a {
+      @include font($family: $font-family, $size: 16px, $height: 24px, $colour: map-get($palette, purple));
+      padding: 10px 20px;
+      @include media-breakpoint-up(md) {
+        padding: 16px 30px;
+      }
+      &:hover {
+        text-decoration: none;
+        @include media-breakpoint-up(md) {
+          color: map-get($palette, white);
+          background-color: map-get($palette, pink);
+        }
+      }
+    }
+    .hasSublevel {
+      @include font($family: $font-family, $size: 16px, $height: 24px, $colour: map-get($palette, purple));
+      padding: 10px 20px;
+      cursor: pointer;
+      @include media-breakpoint-up(md) {
+        padding: 16px 30px;
+      }
+      @include arrow($padding: 3px, $color: map-get($palette, purple));
+      &:after {
+        float: right;
+        margin-top: 8px;
+        position: static;
+        margin-right: -10px;
+      }
+      &:hover {
+        @include media-breakpoint-up(md) {
+          color: map-get($palette, white);
+          background-color: map-get($palette, pink);
+          &:after {
+            border-color: map-get($palette, white);
+          }
+        }
+      }
+    }
+  }
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    .header {
+      @include media-breakpoint-up(md) {
+        &__navwrapper {
+          height: 60px;
+        }
+        &__shortcut {
+          padding-top: 28px;
+        }
+      }
+    }
+    .navicon {
+      @include media-breakpoint-up(md) {
+        margin-right: 20px;
+        margin-top: -5px;
+      }
+    }
+  }
+}
+
+.theme--careers {
+  .header {
+    &__umbrella {
+      background: map-get($palette, purpleThemeTwo);
+    }
+  }
+}
+
+.theme--partners {
+  .header {
+    &__umbrella {
+      background: map-get($palette, purpleThemeThree);
+    }
+  }
+}

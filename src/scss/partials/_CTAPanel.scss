@@ -1,0 +1,55 @@
+.CTAPanel {
+  @extend %standardGap;
+  .thirdCol__wrapper:after {
+    display: none;
+  }
+  .thirdCol {
+    z-index: 2;
+    position: relative;
+    &__imagearea {
+      position: relative;
+      @include media-breakpoint-up(lg) {
+        position: absolute;
+      }
+      picture {
+        position: relative;
+        @include media-breakpoint-up(lg) {
+          position: absolute;
+        }
+      }
+    }
+  }
+  &__contentarea {
+    background-color: map-get($palette, white);
+    padding: 30px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 300px;
+    @include media-breakpoint-up(lg) {
+      min-height: 380px;
+      margin-left: 0;
+      margin-top: 60px;
+      padding: 60px 60px 60px 90px;
+    }
+    p {
+      @extend %bigger;
+    }
+    [class^='icon-'],
+    [class*=' icon-'] {
+      margin-top: 5px;
+    }
+  }
+  &--withImg {
+    .CTAPanel__contentarea {
+      position: relative;
+      min-height: 280px;
+      @include media-breakpoint-up(lg) {
+        min-height: 330px;
+        padding-left: 120px;
+      }
+    }
+  }
+}

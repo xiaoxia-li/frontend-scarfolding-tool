@@ -1,0 +1,15 @@
+#map--OtherCareHome {
+  width: 100%;
+  height: 650px;
+  position: relative;
+  .view__map {
+    z-index: 100;
+    background-color: map-get($palette, white);
+    border: 1px solid map-get($palette, greyFive);
+    padding: 10px 15px;
+    color: map-get($palette, blue);
+    position: absolute;
+    right: 70px;
+    bottom: 25px;
+  }
+}

@@ -1,0 +1,300 @@
+.form {
+  label {
+    font-family: $font-family--medium;
+    margin-bottom: 5px;
+    display: block;
+  }
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='number'],
+  .select2-container,
+  textarea {
+    border: 1px solid map-get($palette, purpleTwo);
+    border-radius: 5px;
+    font-size: 16px;
+    color: map-get($palette, greyThree);
+    padding: 8px 12px;
+    margin-bottom: 5px;
+    @include media-breakpoint-up(lg) {
+      font-size: 18px;
+    }
+  }
+
+  .form-group{
+    margin-bottom: 10px;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .select2-container {
+    width: 100% !important;
+    @include media-breakpoint-up(lg) {
+      width: calc(50% - 10px) !important;
+    }
+  }
+  .inputIconWrapper {
+    position: relative;
+    [class^='icon-'],
+    [class*=' icon-'] {
+      display: none;
+    }
+  }
+  .error {
+    input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='number'] {
+      border: 1px solid map-get($palette, pink);
+    }
+    [class^='icon-'],
+    [class*=' icon-'] {
+      display: block;
+      position: absolute;
+      right: 12px;
+      top: 11px;
+      font-size: 20px;
+      color: map-get($palette, pink);
+    }
+  }
+  .error-info {
+    @extend %extraSmall;
+    color: map-get($palette, pink) !important;
+  }
+
+  .form-radio {
+    display: inline-block;
+    @include formElement(radio);
+    padding-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    label {
+      font-family: $font-family;
+    }
+  }
+  .form-check {
+    display: inline-block;
+    @include formElement(checkbox);
+    padding-left: 20px;
+    margin: 10px 17px 15px -7px;
+    label {
+      font-family: $font-family;
+    }
+  }
+  [type='radio'] {
+    @include media-breakpoint-up(xxl) {
+      margin-left: 10px;
+    }
+  }
+
+  hr {
+    color: map-get($palette, purpleTwo);
+    opacity: 1;
+    margin: 20px 0;
+    display: block;
+    width: 100%;
+  }
+
+  &__inlineSection {
+    .inputIconWrapper {
+      display: inline-block;
+    }
+    .inputIconWrapper:nth-child(even) {
+      float: right;
+    }
+  }
+
+  //This is to hide the hr when theres no elemenets in a form section.
+  //See https://stackoverflow.com/a/12198561/351426
+  &__section--with-spacer hr:first-child:nth-last-child(1) {
+    display: none;
+    visibility: hidden;
+  }
+
+  select.error + .select2,
+  textarea.error, 
+  select:invalid + .select2,
+  textarea:invalid, 
+  input[type='text']:invalid,
+  input[type='email']:invalid,
+  input[type='tel']:invalid,
+  input[type='number']:invalid {
+    border: 1px solid map-get($palette, pink);
+  }
+
+  input[type='text']:invalid + [class^='icon-'],
+  input[type='text']:invalid + [class*='icon-'],
+  input[type='email']:invalid + [class^='icon-'],
+  input[type='email']:invalid + [class*='icon-'],
+  input[type='tel']:invalid + [class^='icon-'],
+  input[type='tel']:invalid + [class*='icon-'],
+  input[type='number']:invalid + [class^='icon-'],
+  input[type='number']:invalid + [class*='icon-'] {
+      display: block;
+      position: absolute;
+      right: 12px;
+      top: 11px;
+      font-size: 20px;
+      color: map-get($palette, pink);
+    }
+}
+
+.form .inputIconWrapper {
+  width: 100%;
+  @include media-breakpoint-up(lg) {
+    width: calc(50% - 10px);
+  }
+  &.inline {
+    @include media-breakpoint-up(lg) {
+      display: inline-block;
+      + .inline {
+        float: right;
+      }
+    }
+  }
+}
+
+/* Form element radio / checkbox button */
+%radioBtn {
+  position: relative;
+  &:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: map-get($palette, white);
+    border: 2px solid map-get($palette, purpleTwo);
+    top: 0;
+    left: 2px;
+  }
+}
+
+%radioBtnChecked {
+  &:before {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: map-get($palette, pink);
+    top: 5px;
+    left: 7px;
+    z-index: 10;
+  }
+  &:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: map-get($palette, white);
+    border: 2px solid map-get($palette, pink);
+    top: 0;
+    left: 2px;
+    z-index: 5;
+  }
+}
+
+%checkboxBtn {
+  position: relative;
+  &:after {
+    position: absolute;
+    content: '';
+    background-color: map-get($palette, white);
+    border: 2px solid map-get($palette, purpleThree);
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    display: inline-block;
+    z-index: 10;
+    top: 0;
+    left: 0;
+  }
+}
+
+%checkboxBtnChecked {
+  &:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    left: 8px;
+    top: 4px;
+    width: 7px;
+    height: 11px;
+    border: solid map-get($palette, white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    z-index: 10;
+  }
+  &:after {
+    position: absolute;
+    content: '';
+    background-color: map-get($palette, pink);
+    border: 2px solid map-get($palette, pink);
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    display: inline-block;
+    z-index: 5;
+    left: 0;
+    top: 0;
+  }
+}
+
+/* select2 dropdown style */
+.select2 {
+  &-dropdown {
+    border: 1px solid map-get($palette, purpleTwo);
+    border-top: none;
+  }
+  &-results__option {
+    padding: 8px 10px;
+    color: map-get($palette, greyThree);
+    &:hover {
+      background-color: map-get($palette, purpleTwo) !important;
+      color: map-get($palette, greyThree) !important;
+    }
+    &--selected {
+      background-color: map-get($palette, purpleThree) !important;
+      color: map-get($palette, greyThree) !important;
+    }
+  }
+}
+/* select2 dropdown error style */
+.select2 {
+  &.error {
+    border: 1px solid map-get($palette, pink);
+  }
+  $block: '.select2';
+  &#{$block}-container--open {
+    border-bottom: 1px solid transparent;
+  }
+  &-selection {
+    border: none !important;
+    &:focus {
+      border: none !important;
+      outline: none !important;
+    }
+  }
+  &-selection__rendered {
+    padding-left: 0 !important;
+  }
+  &-selection__arrow {
+    @include arrow($color: map-get($palette, purple), $degree: 45deg);
+    b[role='presentation'] {
+      display: none;
+    }
+    &:after {
+      top: 12px;
+      right: 15px;
+    }
+  }
+  &-search--dropdown {
+    display: none !important;
+  }
+}

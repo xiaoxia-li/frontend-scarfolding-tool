@@ -1,0 +1,495 @@
+@use 'slick-carousel/slick/slick.css';
+.carousel {
+  @include media-breakpoint-up(sm) {
+    margin-left: calc(50vw - 270px);
+  }
+  @include media-breakpoint-up(md) {
+    margin-left: calc(50vw - 360px);
+  }
+  @include media-breakpoint-up(lg) {
+    margin-left: calc(50vw - 480px);
+  }
+  @include media-breakpoint-up(xl) {
+    margin-left: calc(50vw - 570px);
+  }
+  @include media-breakpoint-up(xxl) {
+    margin-left: calc(50vw - 660px);
+  }
+  @include media-breakpoint-up(xxl) {
+    margin-left: calc(50vw - 660px);
+  }
+  @media (min-width: 1920px) {
+    margin-left: 300px;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+      width: auto;
+    }
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100vw;
+      height: calc(100% + 60px);
+      top: -30px;
+      left: 30px;
+      background-color: map-get($palette, purpleTwo);
+      @include media-breakpoint-up(lg) {
+        left: 320px;
+        top: -60px;
+        height: calc(100% + 120px);
+      }
+    }
+  }
+}
+.carouselAwards {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include media-breakpoint-up(lg) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  &__item--wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    border-right: 2px solid map-get($palette, purpleTwo);
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: map-get($palette, white);
+
+    width: 280px;
+    min-height: 280px;
+    @include media-breakpoint-up(md) {
+      width: 320px;
+      min-height: 320px;
+    }
+    @include media-breakpoint-up(lg) {
+      padding: 30px;
+      width: 380px;
+      min-height: 380px;
+    }
+  }
+  &__img {
+    img {
+      max-width: 160px;
+      margin-bottom: 15px;
+    }
+  }
+  &__content a {
+    @extend %p;
+  }
+}
+
+/* Variant for events carousel */
+.carouselEvents {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include media-breakpoint-up(lg) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  &__item {
+    height: 100%;
+  }
+  &__item--wrapper {
+    height: 100%;
+    background-color: map-get($palette, white);
+    border-right: 2px solid map-get($palette, purpleTwo);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 320px;
+    position: relative;
+    @include media-breakpoint-up(md) {
+      width: 420px;
+    }
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      width: 990px;
+      min-height: 380px;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 1140px;
+    }
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    padding: 50px 30px 30px 30px;
+    @include media-breakpoint-up(lg) {
+      padding: 50px 30px 30px 30px;
+      width: 600px;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 760px;
+    }
+
+    h4 {
+      color: map-get($palette, purple);
+    }
+    .titleLink {
+      color: map-get($palette, greyOne);
+    }
+    .tag {
+      background-color: map-get($palette, purpleThree);
+      @include font($family: $font-family--medium, $size: 14px, $colour: map-get($palette, purple));
+      position: absolute;
+      padding: 5px 10px;
+      top: 0;
+      left: 30px;
+    }
+  }
+  &__img {
+    @include imgLayout();
+    position: absolute;
+    bottom: 0;
+    @include media-breakpoint-up(lg) {
+      position: relative;
+      bottom: auto;
+      width: 380px;
+      min-height: 380px;
+    }
+  }
+}
+
+/* Variant for the signpost carousel */
+.introPanelBlock {
+  padding: 30px;
+  background-color: map-get($palette, purple);
+  margin-top: 0;
+  position: relative;
+  max-width: 330px;
+  min-height: 300px;
+  @include media-breakpoint-up(lg) {
+    min-height: 380px;
+    margin-top: -60px;
+    max-width: 450px;
+  }
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 15px;
+    background-color: map-get($palette, purple);
+    bottom: -15px;
+    left: 0;
+    @include media-breakpoint-up(lg) {
+      top: 0;
+      right: -60px;
+      bottom: auto;
+      left: auto;
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .intro__title {
+    @extend %h3;
+  }
+
+  h3,
+  p,
+  .intro__title {
+    color: map-get($palette, white);
+  }
+}
+
+.overlay__wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  &.show {
+    .overlay__content {
+      bottom: 40px;
+      @include media-breakpoint-up(md) {
+        bottom: 60px;
+      }
+    }
+    .overlay__title:after {
+      transform: rotate(-135deg);
+    }
+  }
+
+  .overlay {
+    &__title {
+      background-color: map-get($palette, purpleBg);
+      color: map-get($palette, white);
+      position: absolute;
+      width: 100%;
+      min-height: 40px;
+      box-sizing: border-box;
+      bottom: 0;
+      left: 0;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      @extend %h5;
+      z-index: 5;
+      line-height: 20px;
+      @include media-breakpoint-up(md) {
+        padding: 20px 30px;
+      }
+      @include arrow();
+      &:after {
+        right: 15px;
+        top: 50%;
+        transition: all 0.2s ease;
+        margin-top: -5px;
+        @include media-breakpoint-up(lg) {
+          right: 20px;
+        }
+      }
+    }
+    &__content {
+      position: absolute;
+      background-color: map-get($palette, purpleBg);
+      width: 100%;
+      overflow: auto;
+      left: 0;
+      bottom: -800px;
+      padding: 15px;
+      height: calc(100% - 40px);
+      transition: bottom 0.5s ease;
+      @include media-breakpoint-up(sm) {
+        bottom: -650px;
+      }
+      @include media-breakpoint-up(md) {
+        padding: 30px;
+        height: calc(100% - 60px);
+      }
+      p {
+        color: map-get($palette, white);
+        line-height: 20px;
+        @include media-breakpoint-up(md) {
+          line-height: 26px;
+        }
+      }
+      &.show {
+        bottom: 40px;
+        @include media-breakpoint-up(md) {
+          bottom: 60px;
+        }
+      }
+    }
+  }
+}
+.carouselSignpost {
+  @extend %standardGap;
+  @include media-breakpoint-up(lg) {
+    padding-top: 120px;
+  }
+  &__sliders {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 30px;
+    @include media-breakpoint-up(lg) {
+      display: block;
+      padding-left: 0;
+    }
+  }
+  &__item {
+    width: 100%;
+    height: 100%;
+    @include media-breakpoint-up(sm) {
+      width: auto;
+    }
+  }
+  &__item--wrapper {
+    position: relative;
+    border-right: 2px solid map-get($palette, purpleTwo);
+    height: 100%;
+    @include media-breakpoint-up(sm) {
+      width: 380px;
+    }
+  }
+  &__img,
+  &__img img {
+    width: 100%;
+    height: 100%;
+    @include object-fit(cover, center);
+  }
+}
+/* Image gallery */
+.imageGallery {
+  @extend %standardGap;
+  @include media-breakpoint-up(lg) {
+    padding-top: 120px;
+  }
+  &__sliders {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 30px;
+    @include media-breakpoint-up(lg) {
+      display: block;
+      padding-left: 0;
+    }
+  }
+  &__item--wrapper {
+    position: relative;
+    border-right: 2px solid map-get($palette, purpleTwo);
+    width: 90vw;
+    @include media-breakpoint-up(sm) {
+      width: 70vw;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 60vw;
+    }
+    @include media-breakpoint-up(xxl) {
+      width: 920px;
+    }
+  }
+  &__img,
+  &__img img {
+    width: 100%;
+    height: 100%;
+    @include object-fit(cover, center);
+  }
+}
+/* Slick carousel navigation custom styles */
+.slick {
+  &-arrow {
+    width: 46px;
+    height: 46px;
+    background-color: map-get($palette, pink);
+    font-size: 0;
+    border: none !important;
+    position: relative;
+    @include arrow($padding: 9px);
+  }
+  &-prev {
+    &:after {
+      transform: rotate(135deg);
+      left: 18px;
+      top: 13px;
+    }
+  }
+  &-next {
+    &:after {
+      transform: rotate(-45deg);
+      left: 10px;
+      top: 13px;
+    }
+  }
+  &:focus,
+  &:active {
+    border: none !important;
+  }
+}
+.carousel {
+  .slick {
+    &-arrow {
+      position: absolute;
+      display: none !important;
+      @include media-breakpoint-up(lg) {
+        display: block !important;
+        left: 224px;
+        bottom: -46px;
+      }
+    }
+    &-next {
+      margin-left: 48px;
+    }
+  }
+}
+/* quote__slider center aligned */
+.quote__slider .slick-track {
+  display: flex !important;
+  align-items: center !important;
+}
+/* Styles for carousel to be equal height */
+.carousel {
+  .slick-track {
+    display: flex !important;
+  }
+  .slick-slide {
+    height: inherit !important;
+    display: flex !important;
+  }
+}
+
+.carouselSignpost__sliders,
+.imageGallery__sliders {
+  button.slick {
+    &-arrow {
+      display: none !important;
+      @include media-breakpoint-up(lg) {
+        display: block !important;
+        left: -95px;
+        top: 321px;
+      }
+    }
+  }
+}
+/* carouselSignpost, carouselEvents full width related style */
+.carouselSignpost,
+.imageGallery {
+  .introPanelBlock {
+    @include media-breakpoint-up(lg) {
+      margin-left: 60px;
+    }
+  }
+}
+/* Themes for careers and partners */
+.theme--careers {
+  .introPanelBlock {
+    background-color: map-get($palette, purpleThemeTwo);
+    &:after {
+      background-color: map-get($palette, purpleThemeTwo);
+    }
+  }
+  .overlay__title,
+  .overlay__content {
+    background-color: map-get($palette, purpleThemeTwoBg);
+  }
+}
+
+.theme--partners {
+  .introPanelBlock {
+    background-color: map-get($palette, purpleThemeThree);
+    &:after {
+      background-color: map-get($palette, purpleThemeThree);
+    }
+  }
+  .overlay__title,
+  .overlay__content {
+    background-color: map-get($palette, purpleThemeThreeBg);
+  }
+}
+
+.imageGallery {
+  .overlay__wrapper {
+    cursor: pointer;
+    .overlay__content {
+      bottom: -650px;
+      height: auto;
+    }
+    &:hover {
+      .overlay__content {
+        bottom: 0;
+        height: auto;
+        max-height: 100%;
+        overflow-y: auto;
+      }
+    }
+  }
+}

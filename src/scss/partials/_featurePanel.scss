@@ -1,0 +1,135 @@
+.featurePanel {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include media-breakpoint-up(lg) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  .customGutter .row {
+    @include media-breakpoint-up(lg) {
+      --bs-gutter-x: 60px;
+    }
+  }
+  &__wrapper {
+    position: relative;
+    background-color: map-get($palette, white);
+    @include media-breakpoint-up(lg) {
+      padding-bottom: 30px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100vw;
+      height: calc(100% + 60px);
+      left: 30px;
+      background-color: map-get($palette, purpleTwo);
+      z-index: -1;
+      margin-top: -30px;
+      @include media-breakpoint-up(lg) {
+        left: calc(33% - 60px);
+        height: calc(100% + 120px);
+        margin-top: -60px;
+      }
+    }
+  }
+  &__intro {
+    padding-top: 30px;
+    padding-left: 20px;
+    @include media-breakpoint-up(lg) {
+      padding-top: 50px;
+      padding-left: 30px;
+    }
+  }
+  &__content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include media-breakpoint-up(lg) {
+      padding-right: 60px;
+    }
+    display: flex;
+    align-items: center;
+    h4:before {
+      content: '';
+      display: block;
+      width: 19px;
+      height: 19px;
+      background-color: map-get($palette, pink);
+      margin-bottom: 5px;
+    }
+  }
+  &__landscape {
+    img {
+      width: calc(100% + 24px);
+      margin-left: -24px;
+      @include media-breakpoint-up(lg) {
+        width: 100%;
+        margin-left: -16px;
+      }
+    }
+    .featurePanel__portrait--background {
+      display: none;
+    }
+  }
+  &__portrait {
+    position: relative;
+    .featurePanel__content {
+      z-index: 2;
+    }
+    &.revertRow {
+      flex-direction: column-reverse;
+      @include media-breakpoint-up(lg) {
+        flex-direction: row;
+      }
+    }
+    &--background {
+      background-color: map-get($palette, purpleThree);
+      position: absolute;
+      width: 100%;
+      top: 120px;
+      margin-left: -24px;
+      height: 250px;
+      z-index: 0;
+      @include media-breakpoint-up(md) {
+        margin-left: -16px;
+        height: 350px;
+      }
+      @include media-breakpoint-up(lg) {
+        width: 55%;
+        margin-left: -80px;
+        height: 60%;
+      }
+      @include media-breakpoint-up(xl) {
+        width: 50%;
+      }
+    }
+    img {
+      z-index: 2;
+      position: relative;
+      width: 60%;
+      margin-left: 80px;
+      @include media-breakpoint-up(lg) {
+        width: 70%;
+        margin-left: 60px;
+        min-height: 100%;
+      }
+      @include media-breakpoint-up(xl) {
+        margin-left: 80px;
+      }
+    }
+  }
+  &__landscape,
+  &__portrait {
+    padding: 15px 0;
+  }
+  &__portrait {
+    .featurePanel__content {
+      @include media-breakpoint-up(lg) {
+        padding-left: 120px;
+      }
+    }
+  }
+  &__contentIntro {
+    /*@extend %bigger; See CUWRC-3 */
+  }
+}

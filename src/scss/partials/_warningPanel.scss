@@ -1,0 +1,62 @@
+.warningPanel
+{
+    $block: &;
+    position: relative;
+    background-color: map-get($palette, greyOne);
+    color: map-get($palette, offWhite);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 3px;
+    font-family: $font-family--medium;
+    z-index: 1;
+
+    &__container {
+        position: relative;
+    }
+
+    &__link{
+        color: inherit;
+        text-align: center;
+        margin-left: 25px;
+        margin-right: 25px;
+        display: block;
+        &:hover, &:active {
+            color: inherit;
+        }
+
+
+    }
+    &__linkIcon.icon-arrow{
+        vertical-align: middle;
+        &::before{
+            color: map-get($palette, offWhite);
+        }
+    }
+
+    &__closeButton{
+        //cross button.
+        //float:right;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__closeButtonIcon.icon-close{
+        vertical-align: middle;
+        &::before{
+            color: map-get($palette, offWhite);
+        }
+    }
+
+    &--light{
+        background-color: map-get($palette, purpleThree);
+        color: map-get($palette, purple);
+
+        & #{$block}__linkIcon.icon-arrow, #{$block}__closeButtonIcon.icon-close{
+            &::before{
+                color: map-get($palette, purple);
+            }
+        }
+    }
+}

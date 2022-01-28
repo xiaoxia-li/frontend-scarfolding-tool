@@ -1,0 +1,198 @@
+.imagePanel {
+  @extend %standardGap;
+  picture {
+    z-index: 5;
+    @include imgLayout($ratioMobile: 82.1%, $ratioDesktop: 50.5%);
+  }
+  .row {
+    overflow: hidden;
+    position: relative;
+  }
+  &__content {
+    @extend %h2;
+    color: map-get($palette, white);
+    position: absolute;
+    z-index: 10;
+    top: 40%;
+    display: inline-block;
+    left: 10px;
+    width: 260px;
+    background-color: map-get($palette, purpleBg);
+    padding: 10px;
+    font-size: 26px;
+    line-height: 32px;
+    @include media-breakpoint-up(sm) {
+      font-size: 30px;
+      line-height: 40px;
+      left: 20px;
+      width: 400px;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 42px;
+      line-height: 52px;
+      padding: 20px;
+      left: 50px;
+      width: 600px;
+    }
+  }
+}
+.paramPanel,
+.videoPanel {
+  .imagePanel {
+    &__content {
+      display: flex;
+      align-items: center;
+      min-height: 60px;
+      @include media-breakpoint-up(lg) {
+        min-height: 120px;
+      }
+    }
+  }
+}
+.paramPanel__iframe,
+.videoPanel__iframe,
+.iframe {
+  background-color: map-get($palette, offWhite);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.playBtn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  z-index: 10;
+  background-color: map-get($palette, purple);
+  text-transform: uppercase;
+  font-size: 0;
+  color: map-get($palette, white);
+  text-align: center;
+  font-family: $font-family--medium;
+  letter-spacing: 2px;
+  cursor: pointer;
+  @include media-breakpoint-up(lg) {
+    width: 120px;
+    height: 120px;
+    font-size: 24px;
+    padding-top: 75px;
+  }
+  .icon-play {
+    font-size: 35px;
+    top: 12px;
+    position: absolute;
+    left: calc(50% - 15px);
+    @include media-breakpoint-up(lg) {
+      font-size: 50px;
+      top: 20px;
+      left: calc(50% - 20px);
+    }
+  }
+  .icon-360 {
+    font-size: 30px;
+    top: 15px;
+    left: calc(50% - 18px);
+    position: absolute;
+    @include media-breakpoint-up(lg) {
+      top: 20px;
+      font-size: 50px;
+      left: calc(50% - 30px);
+    }
+  }
+}
+.playBtn--video,
+.playBtn--params {
+  position: absolute;
+  top: 40%;
+  left: 272px;
+  @include media-breakpoint-up(sm) {
+    left: 422px;
+  }
+  @include media-breakpoint-up(lg) {
+    left: 652px;
+  }
+}
+
+.playBtn--center {
+  top: calc(50% - 30px) !important;
+  left: calc(50% - 30px) !important;
+  @include media-breakpoint-up(lg) {
+    top: calc(50% - 60px) !important;
+    left: calc(50% - 60px) !important;
+  }
+}
+
+.hideOverlay {
+  picture {
+    z-index: -1 !important;
+  }
+  &:before {
+    display: none !important;
+  }
+  .playBtn,
+  .imagePanel__content {
+    display: none !important;
+  }
+}
+
+.theme--careers {
+  .imagePanel__content {
+    background-color: map-get($palette, purpleThemeTwoBg);
+  }
+}
+
+.theme--partners {
+  .imagePanel__content {
+    background-color: map-get($palette, purpleThemeThreeBg);
+  }
+}
+
+.standardContent {
+  .paramPanel,
+  .videoPanel {
+    .imagePanel {
+      &__content {
+        display: flex;
+        align-items: center;
+        @include media-breakpoint-up(lg) {
+          min-height: 60px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+  .imagePanel__content {
+    @include media-breakpoint-up(lg) {
+      font-size: 30px;
+      line-height: 40px;
+      left: 20px;
+      width: 400px;
+    }
+  }
+  .playBtn {
+    @include media-breakpoint-up(lg) {
+      left: 422px;
+      width: 60px;
+      height: 60px;
+      font-size: 0 !important;
+      padding-top: 0;
+    }
+    &--center {
+      @include media-breakpoint-up(lg) {
+        top: calc(50% - 30px) !important;
+        left: calc(50% - 30px) !important;
+      }
+    }
+    .icon-play {
+      font-size: 35px;
+      top: 12px;
+      left: calc(50% - 15px);
+    }
+    .icon-360 {
+      font-size: 30px;
+      top: 15px;
+      left: calc(50% - 18px);
+    }
+  }
+}

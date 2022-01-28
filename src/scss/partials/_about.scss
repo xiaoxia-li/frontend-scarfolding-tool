@@ -1,0 +1,10 @@
+.about {
+  color: green;
+
+  @include media-breakpoint-up(lg) {
+    color: red;
+  }
+}
+.carousel-caption p {
+  color: #000;
+}

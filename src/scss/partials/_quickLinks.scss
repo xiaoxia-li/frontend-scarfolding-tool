@@ -1,0 +1,45 @@
+.quickLinks {
+  background: map-get($palette, purpleThree);
+  border: 1px solid map-get($palette, purpleTwo);
+  padding: 29px 30px;
+  margin: -160px 50px 50px -50px;
+  position: relative;
+
+  &__heading {
+    @include font($family: $font-family--medium, $size: 30px, $height: 43px, $colour: map-get($palette, purple));
+    margin-bottom: 23px;
+  }
+
+  &__item {
+    width: 100%;
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 1px solid map-get($palette, purpleTwo);
+    margin-bottom: 15px;
+    a {
+      @include font($size: 18px, $height: 21px, $colour: map-get($palette, greyOne));
+      transition: padding-left .3s ease-out;
+      padding-left: 0;
+    }
+    &:hover {
+      a {
+        padding-left: 12px;
+        color: map-get($palette, purple);
+        transition: padding-left 0.3s ease;
+      }
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border: none;
+    }
+    &.selected {
+      font-size: 18px;
+      color: map-get($palette, purple);
+      line-height: 24px;
+    }
+  }
+  ul {
+    margin-bottom: 0;
+  }
+}

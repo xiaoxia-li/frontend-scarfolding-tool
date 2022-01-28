@@ -1,0 +1,40 @@
+.accordion {
+  &Panel {
+    @extend %standardGap;
+  }
+  border-top: 1px solid map-get($palette, purpleTwo);
+  border-bottom: 1px solid map-get($palette, purpleTwo);
+  &-button {
+    padding: 8px 40px 8px 0;
+    position: relative;
+    &:not(.collapsed) {
+      color: map-get($palette, purple);
+      background-color: transparent;
+      border-bottom: none;
+    }
+    &:focus {
+      border-color: map-get($palette, purpleThree);
+      box-shadow: none;
+    }
+    span {
+      right: 10px;
+      top: 12px;
+      position: absolute;
+      transition: transform 0.2s ease-in-out;
+    }
+    &:not(.collapsed) span {
+      transform: rotate(135deg);
+    }
+    &:after {
+      display: none;
+    }
+  }
+  &-body {
+    padding: 1.5rem 0;
+    overflow-wrap: break-word;
+    @extend %p;
+  }
+  &-item:last-of-type .accordion-collapse {
+    border-bottom: none;
+  }
+}

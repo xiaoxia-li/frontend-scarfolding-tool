@@ -1,0 +1,165 @@
+.careHomeItem {
+  padding: 0 20px;
+  margin: 30px 0;
+  position: relative;
+  background-color: map-get($palette, white);
+  @include media-breakpoint-up(lg) {
+    padding: 0 30px;
+  }
+  &.feature {
+    border: 2px solid map-get($palette, purple);
+  }
+  &__tag {
+    position: absolute;
+    background-color: map-get($palette, purpleTwo);
+    color: map-get($palette, purple);
+    padding: 2px 5px;
+    top: 0;
+    right: 30px;
+    font-size: 13px;
+    font-family: $font-family--medium;
+  }
+  &__header {
+    padding: 25px 0 15px;
+    border-bottom: 1px solid map-get($palette, purpleTwo);
+    position: relative;
+    .icon-map-pin {
+      color: map-get($palette, pink);
+      font-size: 30px;
+      margin-top: -5px;
+      float: left;
+      display: block;
+      margin-right: 10px;
+    }
+    .order {
+      position: absolute;
+      left: -1px;
+      top: 23px;
+      width: 30px;
+      color: map-get($palette, white);
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+  &__title {
+    @extend %small;
+    display: inline;
+  }
+  &__distance {
+    color: map-get($palette, greyTwo);
+    display: inline-block;
+    margin-left: 10px;
+  }
+  &__tile {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid map-get($palette, purpleTwo);
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+  }
+  &__image {
+    margin-bottom: 20px;
+    @include media-breakpoint-up(lg) {
+      width: calc(45% - 30px);
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
+    picture {
+      @include imgLayout($ratioMobile: 60%, $ratioDesktop: 60%);
+    }
+  }
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    @include media-breakpoint-up(lg) {
+      width: 55%;
+    }
+  }
+  &__content {
+    margin: 20px 0;
+    border-bottom: 1px solid map-get($palette, purpleTwo);
+    &.hasReadmore {
+      @include readmore;
+    }
+  }
+  &__bottom {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+    }
+    .button {
+      margin-top: 20px;
+      @include media-breakpoint-up(sm) {
+        margin: 0;
+      }
+    }
+  }
+  &__contact {
+    display: block;
+    .contact__title {
+      font-family: $font-family--medium;
+    }
+  }
+  &__name {
+    @extend %h6;
+    color: map-get($palette, purple);
+  }
+  &__rating {
+    margin-bottom: 10px;
+    .icon-rating {
+      color: map-get($palette, pink);
+      margin-right: 5px;
+      font-size: 16px;
+    }
+  }
+  &__service {
+    width: 100%;
+    @include media-breakpoint-up(sm) {
+      width: calc(50% - 10px);
+      margin-right: 10px;
+      float: left;
+    }
+
+    .icon-yes,
+    .icon-no {
+      color: map-get($palette, pink);
+      margin-right: 5px;
+      font-size: 16px;
+    }
+  }
+}
+
+.standardContent {
+  .careHomeItem__tile {
+    @include media-breakpoint-up(lg) {
+      flex-direction: column;
+    }
+    @include media-breakpoint-up(xl) {
+      flex-direction: row;
+    }
+  }
+  .careHomeItem__image {
+    @include media-breakpoint-up(lg) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    @include media-breakpoint-up(xl) {
+      width: calc(45% - 30px);
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
+  }
+  .careHomeItem__detail {
+    @include media-breakpoint-up(lg) {
+      width: 100%;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 55%;
+    }
+  }
+}

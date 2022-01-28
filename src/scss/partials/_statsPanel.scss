@@ -1,0 +1,79 @@
+.statsPanel {
+  font-family: $font-family--medium;
+  color: map-get($palette, purple);
+  &__contentarea {
+    @include media-breakpoint-up(lg) {
+      padding-right: 120px !important;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+  }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    &--right {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__figure {
+    font-size: 50px;
+    margin-right: 20px;
+    text-align: right;
+    min-width: 123px;
+    @include media-breakpoint-up(lg) {
+      font-size: 55px;
+      min-width: 125px;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 76px;
+      min-width: 170px;
+    }
+    &--large {
+      font-size: 100px;
+      @include media-breakpoint-up(lg) {
+        font-size: 120px;
+      }
+    }
+  }
+  &__percent {
+    font-size: 25px;
+    margin-left: 10px;
+    @include media-breakpoint-up(lg) {
+      font-size: 30px;
+    }
+    &--large {
+      font-size: 50px;
+      margin-left: 20px;
+      @include media-breakpoint-up(lg) {
+        font-size: 60px;
+      }
+    }
+  }
+  &__caption {
+    @extend %h3;
+    color: map-get($palette, greyOne);
+    font-family: $font-family;
+  }
+  &__figureRow {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    p {
+      @extend %bigger;
+      margin-bottom: 20px;
+    }
+  }
+  &__note {
+    @include media-breakpoint-up(xl) {
+      margin-top: 20px;
+    }
+    p {
+      @extend %small;
+    }
+  }
+}

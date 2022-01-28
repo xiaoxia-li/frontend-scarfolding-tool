@@ -1,0 +1,50 @@
+/* IE11 fix */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .CTAPanel__contentarea,
+  // .carouselEvents__content,
+  .featureTextPanel__contentarea,
+  .statsPanel__column,
+  .heroPanel__content,
+  .outlinedPromo__content,
+  .signpostPanel__content
+  // .carouselAwards__item--wrapper 
+  {
+    display: block !important;
+  }
+  .heroPanel__text {
+    padding-top: 150px !important;
+  }
+  // .carouselAwards__item--wrapper {
+  //   .carouselAwards__img img {
+  //     margin: 0 auto;
+  //   }
+  // }
+  // .collectionPanel--people .collectionPanel__item,
+  // .thirdCol__imagearea,
+  // .featureTextPanel__imagearea,
+  // .signpostPanel__imagearea {
+  //   picture {
+  //     overflow: hidden;
+  //     position: relative;
+  //     height: 100%;
+  //     img {
+  //       position: absolute;
+  //       top: 50%;
+  //       left: 50%;
+  //       height: 100%;
+  //       width: auto;
+  //       transform: translate(-50%, -50%);
+  //       object-fit: unset;
+  //       object-position: unset;
+  //     }
+  //   }
+  // }
+
+  .carouselEvents__content > div,.carouselAwards__content {
+    width: 100%;
+  }
+
+  .carouselSignpost__img, .carouselSignpost__img img {
+    @include object-fit(cover, center);
+  }
+}
