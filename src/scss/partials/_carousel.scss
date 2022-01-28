@@ -1,4 +1,4 @@
-@use 'slick-carousel/slick/slick.css';
+@use '/node_modules/slick-carousel/slick/slick.css';
 .carousel {
   @include media-breakpoint-up(sm) {
     margin-left: calc(50vw - 270px);
