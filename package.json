@@ -2,10 +2,11 @@
   "name": "parcel-repo",
   "version": "1.0.0",
   "license": "MIT",
+  "source": "src/index.html",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.2.1",
     "parcel": "^2.2.1",
-    "parcel-namer-without-hash": "^0.0.1",
+    "parcel-namer-rewrite": "^2.0.0-rc.2",
     "posthtml-doctype": "^1.1.1",
     "posthtml-include": "^1.7.2"
   },
@@ -14,8 +15,24 @@
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
-    "delete": "rm -rf ./dist .parcel-cache",
-    "dev": "rm -rf ./dist .parcel-cache & parcel src/index.html",
-    "build": "rm -rf ./dist .parcel-cache & parcel build src/templates/all.html --no-source-maps"
+    "delete": "rm -rf ./dev ./dist .parcel-cache",
+    "dev": "rm -rf ./dev .parcel-cache & parcel src/index.html --dist-dir dev",
+    "build": "rm -rf ./dist .parcel-cache & parcel build ./src/templates/all.html --no-source-maps --no-content-hash"
+  },
+  "parcel-namer-rewrite": {
+    "chain": "@parcel/namer-default",
+    "rules": {
+      "(.*).js": "js/$1.{hash}.min.js",
+      "(.*).css": "styles/$1.{hash}.min.css",
+      "(.*).eot": "fonts/$1.eot",
+      "(.*).woff": "fonts/$1.woff",
+      "(.*).woff2": "fonts/$1.woff2",
+      "(.*).ttf": "fonts/$1.ttf",
+      "ApexRounded(.*).svg": "fonts/ApexRounded$1.svg",
+      "careukicons(.*).svg": "fonts/careukicons$1.svg",
+      "(.*).svg": "img/$1.svg",
+      "(.*).png": "img/$1.png",
+      "(.*).jpg": "img/$1.jpg"
+    }
   }
 }
