@@ -5,7 +5,8 @@ class HeroPanel {
     this.sel = {
       heroPanel: '.heroPanel',
       loopingText: '.loopingText',
-      fallbackText: '.loopingText__fallback'
+      fallbackText: '.loopingText__fallback',
+      selectField: '.form-select'
     };
 
     this.init = this.init.bind(this);

@@ -3,10 +3,82 @@
   <head>
     <meta charset="utf-8" />
     <title>Frontend templates</title>
+    <style type="text/css">
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 20px 0px;
+      }
+      h1 {
+        font-weight: 400;
+        padding-left: 10px;
+        margin-bottom: 0px;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0px;
+        margin-top: 0px;
+      }
+      ul li {
+        width: 20%;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 20px;
+        padding: 0px 10px;
+        box-sizing: border-box;
+      }
+
+      ul li a {
+        display: block;
+        background: #eeeeee;
+        padding: 10px;
+      }
+
+      ul li img {
+        width: 100%;
+        height: auto;
+      }
+
+      ul li a p {
+        display: block;
+        text-transform: capitalize;
+        margin-top: 20px;
+        text-align: center;
+        color: #000000;
+        text-decoration: underline;
+        font-size: 16px;
+        font-weight: 300;
+      }
+      @media screen and (max-width: 1500px) {
+        ul li {
+          width: 25%;
+        }
+      }
+      @media screen and (max-width: 991px) {
+        ul li {
+          width: 33.33%;
+        }
+      }
+      @media screen and (max-width: 767px) {
+        ul li {
+          width: 50%;
+        }
+        ul li a p {
+          font-size: 14px;
+        }
+      }
+    </style>
   </head>
   <body class="theme--careuk">
-    <a href="./templates/home.html">About page</a>
-    <br />
-    <a href="./templates/product.html">Product page</a>
+    <h1>Care UK website HTML templates</h1>
+    <ul>
+      <li>
+        <a href="./templates/home.html">
+          <img src="./templates/design/about.png" alt="" />
+        </a>
+      </li>
+      <li>
+        <a href="./templates/product.html"> <img src="./templates/design/product.png" alt="" /> </a>
+      </li>
+    </ul>
   </body>
 </html>

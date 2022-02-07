@@ -172,13 +172,6 @@
     "@babel/helper-plugin-utils" "^7.16.7"
     "@babel/plugin-syntax-flow" "^7.16.7"
 
-"@babel/runtime@^7.16.7":
-  version "7.17.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.0.tgz#b8d142fc0f7664fb3d9b5833fd40dcbab89276c0"
-  integrity sha512-etcO/ohMNaNA2UBdaXBBSX/3aEzFMRrVfaPv8Ptc0k+cWpWW0QFiGZ2XnVqQZI1Cf734LbPGmqBKWESfW4x/dQ==
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
 "@babel/template@^7.16.7":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.16.7.tgz#8d126c8701fde4d66b264b3eba3d96f07666d155"
@@ -441,7 +434,7 @@
   dependencies:
     chalk "^4.1.0"
 
-"@parcel/namer-default@^2.0.0-rc.0", "@parcel/namer-default@^2.2.0", "@parcel/namer-default@^2.2.1":
+"@parcel/namer-default@^2.0.0-rc.0", "@parcel/namer-default@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@parcel/namer-default/-/namer-default-2.2.1.tgz#707d306c8f3bb24d64c367876d57f30bbce4709b"
   integrity sha512-uhQwAJyWADEKUVAPZV8TKlUUmKjeKycMatf554u7PeKWSw4H6yUd1z6Ta9IXIx5qi2u3RMeDct5psjh4fpcyEw==
@@ -612,7 +605,7 @@
     "@parcel/utils" "^2.2.1"
     posthtml "^0.16.4"
 
-"@parcel/plugin@^2.0.0-rc.0", "@parcel/plugin@^2.2.0", "@parcel/plugin@^2.2.1":
+"@parcel/plugin@^2.0.0-rc.0", "@parcel/plugin@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@parcel/plugin/-/plugin-2.2.1.tgz#14d46cababae45d89afcf4a26b67880870d4fcfc"
   integrity sha512-UrmAmtCO+Ma78ojhG9LSB5bYSkcjTwyPexfcpgCsZiLrv4cXDjKe7gEYfxWbrJw4ahkUhfgRsrTfUzD/TPYxiA==
@@ -937,6 +930,11 @@
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
+
+Select2@^3.5.7:
+  version "3.5.7"
+  resolved "https://registry.yarnpkg.com/Select2/-/Select2-3.5.7.tgz#7825b352637655d61ffecdf7416979166163787a"
+  integrity sha1-eCWzUmN2VdYf/s33QWl5FmFjeHo=
 
 abortcontroller-polyfill@^1.1.9:
   version "1.7.3"
@@ -2677,15 +2675,6 @@ pako@~1.0.5:
   resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.11.tgz#6c9599d340d54dfd3946380252a35705a6b992bf"
   integrity sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==
 
-parcel-namer-hashless@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/parcel-namer-hashless/-/parcel-namer-hashless-1.0.3.tgz#8a6364c064b4156ea24aba4af31c1f76d58125be"
-  integrity sha512-Sr7SqwI3CA5jmO3luVtv3MObQBvArIV+wzt700XsEtihWVOudXckPrUhv/NEHTDng+CtbVr3fwcld4sWCKkufg==
-  dependencies:
-    "@babel/runtime" "^7.16.7"
-    "@parcel/namer-default" "^2.2.0"
-    "@parcel/plugin" "^2.2.0"
-
 parcel-namer-rewrite@^2.0.0-rc.2:
   version "2.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/parcel-namer-rewrite/-/parcel-namer-rewrite-2.0.0-rc.2.tgz#d6d0738ee5f8cc6a675ce99ca8bf1f62f948250e"
@@ -2697,11 +2686,6 @@ parcel-namer-rewrite@^2.0.0-rc.2:
     "@parcel/plugin" "^2.0.0-rc.0"
     "@parcel/types" "^2.0.0-rc.0"
     assert "^2.0.0"
-
-parcel-namer-without-hash@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/parcel-namer-without-hash/-/parcel-namer-without-hash-0.0.1.tgz#9695411359a0ccfb128225ea7738c2cec562c562"
-  integrity sha512-G1dY6lPqSjoCZJoMoyz0bPavNJgd7sLHgDOtZQS47/3moWCiqm3uY0bNkaDA/NEZGoPLmH6D2eJSPzctCYtmDQ==
 
 parcel@^2.2.1:
   version "2.2.1"
@@ -3239,7 +3223,7 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.7:
+regenerator-runtime@^0.13.7:
   version "0.13.9"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
   integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==

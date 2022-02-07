@@ -11,13 +11,15 @@
     "posthtml-include": "^1.7.2"
   },
   "dependencies": {
+    "Select2": "^3.5.7",
     "jquery": "^3.6.0",
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "delete": "rm -rf ./dev ./dist .parcel-cache",
     "dev": "rm -rf ./dev .parcel-cache & parcel src/index.html --dist-dir dev",
-    "build": "rm -rf ./dist .parcel-cache & parcel build ./src/templates/all.html --no-source-maps --no-content-hash"
+    "build": "rm -rf ./dist .parcel-cache & parcel build ./src/templates/all.html --no-source-maps --no-content-hash",
+    "deploy": "parcel src/index.html --dist-dir ../backend"
   },
   "parcel-namer-rewrite": {
     "chain": "@parcel/namer-default",
